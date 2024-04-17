@@ -1,3 +1,3 @@
 <?php include("../../templates/header.php");?>
-Editar servicios
+Listar portafolio
 <?php include("../../templates/footer.php");?>

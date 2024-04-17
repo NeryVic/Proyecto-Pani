@@ -1,3 +1,3 @@
 <?php include("../../templates/header.php");?>
-crear servicios
+Crear servicios
 <?php include("../../templates/footer.php");?>

@@ -1,3 +1,3 @@
 <?php include("../../templates/header.php");?>
-Editar servicios
+Editar Usuario
 <?php include("../../templates/footer.php");?>

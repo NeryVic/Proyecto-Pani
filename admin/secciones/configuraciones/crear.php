@@ -1,3 +1,3 @@
 <?php include("../../templates/header.php");?>
-Editar servicios
+Crear configuraciones
 <?php include("../../templates/footer.php");?>
