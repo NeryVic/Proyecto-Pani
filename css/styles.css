@@ -1,15 +1,5 @@
 @charset "UTF-8";
-/*!
-* Start Bootstrap - Agency v7.0.12 (https://startbootstrap.com/theme/agency)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-agency/blob/master/LICENSE)
-*/
-/*!
- * Bootstrap  v5.2.3 (https://getbootstrap.com/)
- * Copyright 2011-2022 The Bootstrap Authors
- * Copyright 2011-2022 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -101,7 +91,7 @@ body {
   text-align: var(--bs-body-text-align);
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: rgba(218, 235, 223, 0);
 }
 
 hr {
@@ -640,6 +630,7 @@ progress {
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-right: auto;
   margin-left: auto;
+  padding-bottom: 0.5rem;
 }
 
 @media (min-width: 576px) {
@@ -3683,7 +3674,7 @@ textarea.form-control-lg {
 .nav-pills {
   --bs-nav-pills-border-radius: 0.375rem;
   --bs-nav-pills-link-active-color: #fff;
-  --bs-nav-pills-link-active-bg: #ffc800;
+  --bs-nav-pills-link-active-bg: #b89720;
 }
 .nav-pills .nav-link {
   background: none;
@@ -3753,6 +3744,7 @@ textarea.form-control-lg {
   align-items: center;
   justify-content: space-between;
   padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
+  
 }
 .navbar > .container,
 .navbar > .container-fluid,
@@ -3765,6 +3757,7 @@ textarea.form-control-lg {
   flex-wrap: inherit;
   align-items: center;
   justify-content: space-between;
+  
 }
 .navbar-brand {
   padding-top: var(--bs-navbar-brand-padding-y);
@@ -3777,6 +3770,7 @@ textarea.form-control-lg {
 }
 .navbar-brand:hover, .navbar-brand:focus {
   color: var(--bs-navbar-brand-hover-color);
+
 }
 
 .navbar-nav {
@@ -6790,6 +6784,7 @@ textarea.form-control-lg {
   right: 0;
   left: 0;
   z-index: 1030;
+  
 }
 
 .fixed-bottom {
@@ -10880,7 +10875,7 @@ p {
   padding-bottom: 1rem;
   background-color: #212529;
 }
-#mainNav .navbar-toggler {
+#mainNav .navbar-toggler{
   padding: 0.75rem;
   font-size: 0.75rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -10926,7 +10921,7 @@ p {
   #mainNav.navbar-shrink {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: #212529;
+    background-color: #5e412f; /* modificar esto despues lpm*/
   }
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.25em;
@@ -10946,7 +10941,7 @@ header.masthead {
   padding-top: 10.5rem;
   padding-bottom: 6rem;
   text-align: center;
-  color: #fff;
+  color: #cca000;
   background-image: url("../assets/img/header-bg.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -11117,17 +11112,17 @@ header.masthead .masthead-heading {
   border-left-width: 0;
 }
 .timeline > li .timeline-image {
-  position: absolute;
+  position: relative;
   z-index: 100;
   left: 0;
-  width: 80px;
+  width: 70px;
   height: 80px;
   margin-left: 0;
   text-align: center;
-  color: white;
-  border: 7px solid #e9ecef;
-  border-radius: 100%;
-  background-color: #ffc800;
+  color: #eed09d;
+  border: 5px solid #e9ecef;
+  border-radius: 75%;
+  background-color: #5e412f;
 }
 .timeline > li .timeline-image h4, .timeline > li .timeline-image .h4 {
   font-size: 10px;
