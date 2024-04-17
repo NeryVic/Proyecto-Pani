@@ -16,3 +16,5 @@ Colaboración y trabajo en equipo para alcanzar nuestros objetivos.
 Adaptabilidad y capacidad de respuesta ante las necesidades cambiantes del mercado.
 Modelo de Negocio:
 Maderas PANI actúa como intermediario entre proveedores de madera, como aserraderos y empresas forestales, y clientes en todo el país, como constructoras, fabricantes de muebles y particulares. Nos encargamos de identificar las necesidades de nuestros clientes, buscar las mejores opciones de madera disponibles en el mercado y facilitar la negociación y la entrega de los productos. Trabajamos estrechamente con una red de proveedores confiables para garantizar la calidad y la disponibilidad de la madera, mientras mantenemos una relación cercana con nuestros clientes para asegurar su satisfacción y fidelidad.
+
+ALE PUTO.
