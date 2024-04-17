@@ -1,6 +1,6 @@
 <?php
 $servidor= "localhost";
-$BaseDeDatos= "app";
+$BaseDeDatos= "maderas-pani";
 $usuario= "root";
 $contrasenia="";
 
