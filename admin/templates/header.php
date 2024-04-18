@@ -6,7 +6,7 @@ $url_base= "http://localhost/Proyecto-Pani/admin/"
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Title</title>
+        <title>Administrador</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta
@@ -32,11 +32,12 @@ $url_base= "http://localhost/Proyecto-Pani/admin/"
                         >Administrador <span class="visually-hidden">(current)</span></a
                     >
                     <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/servicios/">Servicio</a>
-                    <a class="nav-item nav-link" href="#">Portafolio</a>
-                    <a class="nav-item nav-link" href="#">Entradas</a>
-                    <a class="nav-item nav-link" href="#">Equipo</a>
-                    <a class="nav-item nav-link" href="#">Configuraciones</a>
-                    <a class="nav-item nav-link" href="#">Usuarios</a>
+                    <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/portafolio/">Portafolio</a>
+                    <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/entradas/">Entradas</a>
+                    <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/equipo/">Equipo</a>
+                    <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/configuraciones/">Configuraciones</a>
+                    <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/usuarios/">Usuarios</a>
+                    <a class="nav-item nav-link" href="<?php echo $url_base;?>login.php">Cerrar sesion</a>
                 </div>
             </nav>
             
