@@ -77,7 +77,7 @@ include("./bd.php");
                                     name=""
                                     id=""
                                     class="btn btn-primary"
-                                    href="#"
+                                    href="index.php"
                                     role="button"
                                     >Entrar</a
                                 >
