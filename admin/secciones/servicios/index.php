@@ -1,5 +1,12 @@
-<?php include("../../templates/header.php");?>
+<?php 
+include("../../bd.php");
+//seleccionar registros
+$sentencia = $conexion->prepare("SELECT * FROM `tbl_servicios`");
+$sentencia-> execute();
+$lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 
+
+include("../../templates/header.php");?>
 <div class="card">
     <div class="card-header"></div>
     <a
@@ -10,6 +17,7 @@
         role="button"
         >Agregar registro</a
     >
+    
     
     <div class="card-body">
         <div
@@ -28,13 +36,35 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach($lista_servicios as $registros){ ?>
                     <tr class="">
-                        <td>1</td>
-                        <td>ICONO</td>
-                        <td>MADERAS</td>
-                        <td>Informacion sobre la madera y su uso</td>
-                        <td>Editar|Eliminar</td>
+                        <td><?php echo $registros['ID']; ?></td>
+                        <td><?php echo $registros['icono']; ?></td>
+                        <td><?php echo $registros['titulo']; ?></td>
+                        <td><?php echo $registros['descripcion']; ?></td>
+                        <td>
+                            
+                        <a
+                            name=""
+                            id=""
+                            class="btn btn-info"
+                            href="#"
+                            role="button"
+                            >Editar</a
+                        >
+                        
+                        <a
+                            name=""
+                            id=""
+                            class="btn btn-danger"
+                            href="#"
+                            role="button"
+                            >Eliminar</a
+                        >
+                        
+                        </td>
                     </tr>
+                    <?php }?>
                 </tbody>
             </table>
         </div>

@@ -1,17 +1,21 @@
 <?php 
 include("../../bd.php");
 if($_POST){
-
-    
     //Recepcionamos los valores del formulario.
-    $icono=(isset($_POST['Icono']))?$_POST['Icono']:"";
-    $Titulo=(isset($_POST['Titulo']))?$_POST['Titulo']:"";
-    $Descripcion=(isset($_POST['Descripcion']))?$_POST['Descripcion']:"";
+    $icono = (isset($_POST['icono'])) ? $_POST['icono'] : "";
+    $Titulo = (isset($_POST['Titulo'])) ? $_POST['Titulo'] : "";
+    $Descripcion = (isset($_POST['Descripcion'])) ? $_POST['Descripcion'] : "";
 
+    $sentencia = $conexion->prepare("INSERT INTO `tbl_servicios` (`ID`, `icono`, `titulo`, `descripcion`) 
+    VALUES (NULL, :icono, :Titulo, :Descripcion);");
 
-    $sentencia-$conexion->prepare();
+    $sentencia->bindParam(":icono", $icono);
+    $sentencia->bindParam(":Titulo", $Titulo);
+    $sentencia->bindParam(":Descripcion", $Descripcion);
 
-} 
+    $sentencia->execute();
+}
+
 
 
 include("../../templates/header.php");?>
