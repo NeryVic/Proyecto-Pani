@@ -8,16 +8,16 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 
 include("../../templates/header.php");?>
 <div class="card">
-    <div class="card-header"></div>
+    <div class="card-header">     
     <a
         name=""
         id=""
         class="btn btn-primary"
         href="crear.php"
         role="button"
-        >Agregar registro</a
-    >
-    
+        >Agregar registro</a>
+       
+        </div>
     
     <div class="card-body">
         <div

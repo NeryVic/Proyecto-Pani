@@ -73,6 +73,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -89,9 +90,10 @@ body {
   line-height: var(--bs-body-line-height);
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
-  background-color: var(--bs-body-bg);
+  
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(218, 235, 223, 0);
+  background-color: #f5de788c; /* cambiar color de fondo de la página */
 }
 
 hr {
@@ -631,6 +633,7 @@ progress {
   margin-right: auto;
   margin-left: auto;
   padding-bottom: 0.5rem;
+  
 }
 
 @media (min-width: 576px) {
@@ -666,6 +669,7 @@ progress {
   margin-top: calc(-1 * var(--bs-gutter-y));
   margin-right: calc(-0.5 * var(--bs-gutter-x));
   margin-left: calc(-0.5 * var(--bs-gutter-x));
+  
 }
 .row > * {
   flex-shrink: 0;
@@ -2306,6 +2310,7 @@ textarea.form-control-lg {
   margin-right: 1rem;
 }
 
+
 .btn-check {
   position: absolute;
   clip: rect(0, 0, 0, 0);
@@ -2851,6 +2856,7 @@ textarea.form-control-lg {
   --bs-btn-disabled-bg: #ffc800;
   --bs-btn-disabled-border-color: #ffc800;
 }
+
 
 .btn-secondary {
   --bs-btn-color: #fff;
@@ -8158,7 +8164,7 @@ textarea.form-control-lg {
 
 .bg-light {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+  background-color: #f5de700c!important; /*color de fondo*/
 }
 
 .bg-dark {
@@ -11021,7 +11027,7 @@ header.masthead .masthead-heading {
 #portfolio .portfolio-item .portfolio-caption {
   padding: 1.5rem;
   text-align: center;
-  background-color: #fff;
+  background-color: #f5de788c; /*fondo items--------------------------------------------------*/
 }
 #portfolio .portfolio-item .portfolio-caption .portfolio-caption-heading {
   font-size: 1.5rem;
