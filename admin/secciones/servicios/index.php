@@ -1,14 +1,24 @@
 <?php 
 include("../../bd.php");
-//seleccionar registros
+if(isset($_GET['txtID'])){
+//Borrar registros
+        
+        $txtID=(isset($_GET['txtID']) ) ?$_GET['txtID']:"";
+        
+        $sentencia = $conexion->prepare("DELETE * FROM tbl_servicios WHERE id=:id "); 
+        $sentencia->bindParam(":id", $id);
+    
+        $sentencia->execute();
+
+}
+//Seleccionar registros
 $sentencia = $conexion->prepare("SELECT * FROM `tbl_servicios`");
 $sentencia-> execute();
 $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 
-
 include("../../templates/header.php");?>
 <div class="card">
-    <div class="card-header"></div>
+    <div class="card-header">
     <a
         name=""
         id=""
@@ -16,7 +26,7 @@ include("../../templates/header.php");?>
         href="crear.php"
         role="button"
         >Agregar registro</a
-    >
+    ></div>
     
     
     <div class="card-body">
@@ -57,7 +67,7 @@ include("../../templates/header.php");?>
                             name=""
                             id=""
                             class="btn btn-danger"
-                            href="#"
+                            href="index.php?txtID=<?php echo $registros['ID'];?>"
                             role="button"
                             >Eliminar</a
                         >
