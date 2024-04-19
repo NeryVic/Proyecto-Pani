@@ -18,16 +18,26 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 
 include("../../templates/header.php");?>
 <div class="card">
+<<<<<<< HEAD
     <div class="card-header">
+=======
+    <div class="card-header">     
+>>>>>>> 1592cadbc88098e568de505062159fe0c34ae39d
     <a
         name=""
         id=""
         class="btn btn-primary"
         href="crear.php"
         role="button"
+<<<<<<< HEAD
         >Agregar registro</a
     ></div>
     
+=======
+        >Agregar registro</a>
+       
+        </div>
+>>>>>>> 1592cadbc88098e568de505062159fe0c34ae39d
     
     <div class="card-body">
         <div
