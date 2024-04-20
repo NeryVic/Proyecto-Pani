@@ -12,7 +12,6 @@ if($_POST){
     $sentencia->bindParam(":icono", $icono);
     $sentencia->bindParam(":Titulo", $Titulo);
     $sentencia->bindParam(":Descripcion", $Descripcion);
-
     $sentencia->execute();
 }
 
