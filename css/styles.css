@@ -93,7 +93,11 @@ body {
   
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(218, 235, 223, 0);
-  background-color: #f5de788c; /* cambiar color de fondo de la página */
+  background-color: #fdf0b38c; /* cambiar color de fondo de la página */
+}
+
+.btnNery {
+  border-radius: 25px 10px 25px 10px;
 }
 
 hr {
@@ -633,6 +637,8 @@ progress {
   margin-right: auto;
   margin-left: auto;
   padding-bottom: 0.5rem;
+
+
   
 }
 
@@ -665,7 +671,7 @@ progress {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap:wrap;
   margin-top: calc(-1 * var(--bs-gutter-y));
   margin-right: calc(-0.5 * var(--bs-gutter-x));
   margin-left: calc(-0.5 * var(--bs-gutter-x));
@@ -7672,6 +7678,7 @@ textarea.form-control-lg {
 
 .mb-4 {
   margin-bottom: 1.5rem !important;
+  
 }
 
 .mb-5 {
@@ -10933,7 +10940,7 @@ p {
   #mainNav.navbar-shrink {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: #5e412f; /* modificar esto despues lpm*/
+    background-color: #5e412f; /*color fondo del nav------------------------*/
   }
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.25em;
@@ -10954,8 +10961,6 @@ header.masthead {
   padding-bottom: 6rem;
   text-align: center;
   color: #fcebb6;          /* modificar esto despues*/
- 
-  
   background-image: url("../assets/img/header-bg.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -11093,7 +11098,7 @@ header.masthead .masthead-heading {
   width: 2px;
   margin-left: -1.5px;
   content: "";
-  background-color: #e9ecef;
+  background-color: #5e412f; /*lineaitems--------------------------------------------------*/
 }
 .timeline > li {
   position: relative;
@@ -11134,8 +11139,8 @@ header.masthead .masthead-heading {
   height: 80px;
   margin-left: 0;
   text-align: center;
-  color: #eed09d;
-  border: 5px solid #e9ecef;
+  color: #f0a830;
+  border: 5px solid #5e412f;  /*fondo circulo--------------------------------------------------*/
   border-radius: 75%;
   background-color: #5e412f;
 }
