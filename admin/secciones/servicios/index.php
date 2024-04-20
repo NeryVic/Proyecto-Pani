@@ -54,7 +54,7 @@ include("../../templates/header.php");?>
                             name=""
                             id=""
                             class="btn btn-info"
-                            href="#"
+                            href="editar.php?txtID=<?php echo $registros['ID'];?>"
                             role="button"
                             >Editar</a
                         >
