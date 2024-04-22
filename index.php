@@ -70,14 +70,16 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                     <h3 class="section-subheading text-muted"></h3>
                 </div>
                     <div class="row text-center">
+                    <?php foreach($lista_servicios as $registros){ ?>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                            <i class="fas <?php echo $registros["icono"];?>fa-stack-1x fa-inverse"></i>
                         </span>
-                        <h4 class="my-3">E-Commerce</h4>
+                        <h4 class="my-3"><?php echo $registros["Titulo"];?></h4>
                         <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                     </div>
+                    <?php } ?>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
@@ -99,13 +101,13 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                 <!-- Carousel -->
                 
                 <div id="carouselExampleCaptions" class="carousel slide">
-                <?php foreach($lista_servicios as $registros){ ?>
+                
                     <div class="carousel-indicators">
                       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
                       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
-                    <?php } ?>
+                   
                     <div class="carousel-inner">
                       <div class="carousel-item active">
                         
