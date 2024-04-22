@@ -19,27 +19,31 @@ if(isset($_GET['txtID'])){
     if($_POST){
     print_r($_POST);
      //Actualizamos los valores del formulario.
-     $txtID = (isset($_POST['txtID'])) ? $_POST['txtID'] : "";
-     $icono = (isset($_POST['icono'])) ? $_POST['icono'] : "";
-     $Titulo = (isset($_POST['Titulo'])) ? $_POST['Titulo'] : "";
-     $Descripcion = (isset($_POST['Descripcion'])) ? $_POST['Descripcion'] : "";
- 
+      $txtID = (isset($_POST['txtID'])) ? $_POST['txtID'] : "";
+      $icono = (isset($_POST['icono'])) ? $_POST['icono'] : "";
+      $Titulo = (isset($_POST['Titulo'])) ? $_POST['Titulo'] : "";
+      $Descripcion = (isset($_POST['Descripcion'])) ? $_POST['Descripcion'] : "";
+     
+     
+     
+     
      $sentencia = $conexion->prepare("UPDATE tbl_servicios
      SET 
      icono=:icono,
      Titulo=:Titulo,
      Descripcion=:Descripcion
      WHERE ID=:ID");
-     $sentencia->bindParam(":icono", $icono);
-     $sentencia->bindParam(":Titulo", $Titulo);
-     $sentencia->bindParam(":Descripcion", $Descripcion);
      
-     $sentencia->bindParam(":ID", $txtID);
+      $sentencia->bindParam(":icono", $icono);
+      $sentencia->bindParam(":Titulo", $Titulo);
+      $sentencia->bindParam(":Descripcion", $Descripcion);
+     
+      $sentencia->bindParam(":ID", $txtID);
      
      
-     $sentencia->execute();
-
-
+      $sentencia->execute(); 
+      $mensaje="Registro modificado con éxito,";
+    header("Location:index.php?mensaje=".$mensaje);
     }
 include("../../templates/header.php");?>
 
@@ -55,7 +59,7 @@ include("../../templates/header.php");?>
         <div class="mb-3">
             <label for="" class="form-label">ID:</label>
             <input
-                value="<?php echo $txtID;?>"
+                readonly value="<?php echo $txtID;?>"
                 type="text"
                 class="form-control"
                 name="txtID"
@@ -118,7 +122,7 @@ include("../../templates/header.php");?>
             type="submit"
             class="btn btn-success"
         >
-            Agregar
+            Actualizar
         </button>
         
         <a

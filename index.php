@@ -1,3 +1,12 @@
+<?php
+include("admin/bd.php");
+//Seleccionar registros
+$sentencia = $conexion->prepare("SELECT * FROM `tbl_servicios`");
+$sentencia-> execute();
+$lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
