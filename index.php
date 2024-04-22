@@ -65,18 +65,23 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
         <section class="page-section" id="services">
             <div class="container">
                 <div class="text-center">
+                
                     <h2 class="section-heading text-uppercase">productos destacados</h2>
                     <h3 class="section-subheading text-muted"></h3>
                 </div>
                 <!-- Carousel -->
+                
                 <div id="carouselExampleCaptions" class="carousel slide">
+                <?php foreach($lista_servicios as $registros){ ?>
                     <div class="carousel-indicators">
                       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
                       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
+                    <?php } ?>
                     <div class="carousel-inner">
                       <div class="carousel-item active">
+                        
                         <img src="assets/img/portfolio/1.jpg" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                           <h5>Primera Imagen</h5>
