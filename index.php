@@ -68,7 +68,7 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                     <h2 class="section-heading text-uppercase">productos destacados</h2>
                     <h3 class="section-subheading text-muted"></h3>
                 </div>
-                
+
                     <div class="row text-center">
                     <?php foreach($lista_servicios as $registros){ ?>
                     <div class="col-md-4">
@@ -76,27 +76,12 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
                             <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
                         </span>
-                        <h4 class="my-3">E-Commerce</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                        <h4 class="my-3"><?php echo $registros['titulo'] ?></h4>
+                        <p class="text-muted"><?php echo $registros['descripcion'] ?></p>
                     </div>
                     <?php }?>
 
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">Responsive Design</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">Web Security</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                    </div>
+
                 </div>
             </div>
                 <!-- Carousel -->
@@ -108,11 +93,15 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                     <div class="carousel-inner">
                       <div class="carousel-item active">
+
+                        <?php foreach($lista_servicios as $registros){ ?>
                         <img src="assets/img/portfolio/1.jpg" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                          <h5>Primera Imagen</h5>
+                          <h5>asaaaaaa</h5>
                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, dolorum amet maxime odio repellendus autem voluptatem</p>
                         </div>
+                        <?php }?>
+
                       </div>
                       <div class="carousel-item">
                         <img src="assets/img/portfolio/2.jpg" class="d-block w-100" alt="...">
