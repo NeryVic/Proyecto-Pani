@@ -34,7 +34,7 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             
             <div class="container">
-           <a class="" href="#page-top"><img class="logo-pani2" src="assets/img/logo.png" alt="..." /></a> 
+           <a class="" href="#page-top"><img class="logo-pani2" src="assets/img/logo1.png" alt="..." /></a> 
             <a class="navbar-brand" href="#page-top"><span class="logo-pani">MADERAS-PANI</span></a>
               
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,7 +68,7 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                     <h2 class="section-heading text-uppercase">productos destacados</h2>
                     <h3 class="section-subheading text-muted"></h3>
                 </div>
-
+<!-- 
                     <div class="row text-center">
                     <?php foreach($lista_servicios as $registros){ ?>
                     <div class="col-md-4">
@@ -83,7 +83,7 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 
 
                 </div>
-            </div>
+            </div> -->
                 <!-- Carousel -->
                 <div id="carouselExampleCaptions" class="carousel slide">
                     <div class="carousel-indicators">
@@ -97,8 +97,8 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                         <?php foreach($lista_servicios as $registros){ ?>
                         <img src="assets/img/portfolio/1.jpg" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                          <h5>asaaaaaa</h5>
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, dolorum amet maxime odio repellendus autem voluptatem</p>
+                          <h5><?php echo $registros['titulo'] ?></h5>
+                          <p><?php echo $registros['descripcion'] ?></p>
                         </div>
                         <?php }?>
 
