@@ -22,7 +22,7 @@ if(isset($_GET['txtID'])){
     //print_r($_POST);
      //Actualizamos los valores del formulario.
       $txtID = (isset($_POST['txtID'])) ? $_POST['txtID'] : "";
-      $icono = (isset($_FILES["icono"]["name"])) ? $_FILES['icono']["name"] : "";
+
       $Titulo = (isset($_POST['Titulo'])) ? $_POST['Titulo'] : "";
       $Descripcion = (isset($_POST['Descripcion'])) ? $_POST['Descripcion'] : "";
      
@@ -40,10 +40,37 @@ if(isset($_GET['txtID'])){
 
       $sentencia->bindParam(":Titulo", $Titulo);
       $sentencia->bindParam(":Descripcion", $Descripcion);
+      
       $sentencia->bindParam(":ID", $txtID);
-     
-     
-      $sentencia->execute(); 
+      $sentencia->execute();
+
+      if($_FILES["icono"]["tmp_name"]!=""){
+        $icono = (isset($_FILES["icono"]["name"])) ? $_FILES['icono']["name"] : ""; //
+        $fecha_imagen=new DateTime();
+        $nombre_archivo_imagen=($icono !="")?$fecha_imagen->getTimestamp()."_".$icono:""; //
+  
+        $tmp_imagen = $_FILES["icono"]["tmp_name"]; 
+        
+        move_uploaded_file($tmp_imagen, "../../../assets/img/servicios/".$nombre_archivo_imagen);
+
+        //Eliminar imagen anterior
+        $sentencia = $conexion->prepare("SELECT icono FROM tbl_servicios WHERE ID=:ID");
+        $sentencia->bindParam(":ID", $txtID);
+        $sentencia->execute();
+        $registro_imagen=$sentencia->fetch(PDO::FETCH_LAZY);
+
+        if(isset($registro_imagen["icono"])){
+        if(file_exists("../../../assets/img/servicios/".$registro_imagen["icono"])){
+        unlink("../../../assets/img/servicios/".$registro_imagen["icono"]);
+         }
+     }
+        
+        $sentencia = $conexion->prepare("UPDATE tbl_servicios SET icono=:icono  WHERE ID=:ID");
+        $sentencia->bindParam(":icono", $nombre_archivo_imagen);
+        $sentencia->bindParam(":ID", $txtID);
+        $sentencia->execute();
+      }
+
       $mensaje="Registro modificado con éxito,";
     header("Location:index.php?mensaje=".$mensaje);
     }
@@ -74,8 +101,8 @@ include("../../templates/header.php");?>
 
         <div class="mb-3"> 
             <label for="" class="form-label">Icono:</label>
+            <img width="50" height="50" src="../../../assets/img/servicios/<?php echo $icono;?>" />
             <input
-                value="<?php echo $icono;?>"
                 type="file"
                 class="form-control"
                 name="icono"

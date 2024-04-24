@@ -2,7 +2,19 @@
 include("../../bd.php");
 if(isset($_GET['txtID'])){
 //Borrar registros
-$txtID=(isset ($_GET['txtID']) )? $_GET['txtID']:"";       
+$txtID=(isset ($_GET['txtID']) )? $_GET['txtID']:"";
+$sentencia = $conexion->prepare("SELECT icono FROM tbl_servicios WHERE ID=:ID");
+$sentencia->bindParam(":ID", $txtID);
+$sentencia->execute();
+$registro_imagen=$sentencia->fetch(PDO::FETCH_LAZY);
+
+if(isset($registro_imagen["icono"])){
+    if(file_exists("../../../assets/img/servicios/".$registro_imagen["icono"])){
+        unlink("../../../assets/img/servicios/".$registro_imagen["icono"]);
+    }
+}
+
+
 $sentencia = $conexion->prepare("DELETE FROM tbl_servicios WHERE ID=:ID");
 $sentencia->bindParam(":ID", $txtID);
 $sentencia->execute();
@@ -45,7 +57,9 @@ include("../../templates/header.php");?>
                     <?php foreach($lista_servicios as $registros){ ?>
                     <tr class="">
                         <td><?php echo $registros['ID']; ?></td>
-                        <td><?php echo $registros['icono']; ?></td>
+                        <td>
+                            <img width="50" height="50" src="../../../assets/img/servicios/<?php echo $registros['icono']; ?>" alt="...">
+                        </td>
                         <td><?php echo $registros['titulo']; ?></td>
                         <td><?php echo $registros['descripcion']; ?></td>
                         <td>
