@@ -1,4 +1,75 @@
 <?php include("../../templates/header.php");?>
-Crear portafolio
+
+
+
+<div class="card">
+    <div class="card-header">Producto del portafolio</div>
+    <div class="card-body">
+    <form action=""ectype="multipart/form-data" method="post">
+
+
+
+
+    
+    <div class="mb-3">
+    <label for="" class="form-label">Titulo:</label>
+    <input
+        type="text"
+        class="form-control"
+        name=""
+        id=""
+        aria-describedby="titulo"
+        placeholder="Titulo"
+    />
+</div>
+
+</div>
+
+<div class="mb-3">
+    <label for="" class="form-label">Subtitulo:</label>
+    <input
+        type="text"
+        class="form-control"
+        name="subtitulo"
+        id=""
+        aria-describedby="helpId"
+        placeholder="Suptitulo"
+    />
+</div>
+<div class="mb-3">
+    <label for="" class="form-label">Imagen</label>
+    <input
+        type="file"
+        class="form-control"
+        name="imagen"
+        id="imagen"
+        placeholder="Imagen"
+        aria-describedby="fileHelpId"
+    />
+
+</div>
+
+<div class="mb-3">
+    <label for="" class="form-label">Descripcion:</label>
+    <input
+        type="text"
+        class="form-control"
+        name="Descripcion"
+        id="Descripcion"
+        aria-describedby="helpId"
+        placeholder="Descripcion"
+    />
+</div>
+
+
+
+
+
+
+</form>
+<div class="card-footer text-muted"></div>
+</div>
+
+
 <?php include("../../templates/footer.php");?>
 

@@ -20,9 +20,12 @@
         >
             <thead>
                 <tr>
-                    <th scope="col">Column 1</th>
-                    <th scope="col">Column 2</th>
-                    <th scope="col">Column 3</th>
+                    <td scope="col">ID</td>
+                    <td scope="col">Titulo</td>
+                    <td scope="col">Subtitulo</td>
+                    <td scope="col">Descripcion</td>
+                    <td scope="col">Imagen</td>
+                    <td scope="col">Acciones</td>
                 </tr>
             </thead>
             <tbody>
