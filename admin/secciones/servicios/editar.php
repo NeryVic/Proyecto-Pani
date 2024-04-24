@@ -6,21 +6,23 @@ if(isset($_GET['txtID'])){
     $txtID=(isset ($_GET['txtID']) )? $_GET['txtID']:"";       
     $sentencia = $conexion->prepare("SELECT * FROM tbl_servicios WHERE ID=:ID");
     $sentencia->bindParam(":ID", $txtID);
+
     $sentencia->execute();
     $registro=$sentencia->fetch(PDO::FETCH_LAZY);
      //Recepcionamos los valores del formulario.
         $icono =$registro['icono'];
-        $Titulo =$registro['Titulo'];
-        $Descripcion = $registro['Descripcion'];
+        $Titulo =$registro['titulo']; // hay que prestar atencion a los detalles. >:V
+        $Descripcion = $registro['descripcion'];
 
+        //print_r($Descripcion); 
 
 
     }
     if($_POST){
-    print_r($_POST);
+    //print_r($_POST);
      //Actualizamos los valores del formulario.
       $txtID = (isset($_POST['txtID'])) ? $_POST['txtID'] : "";
-      $icono = (isset($_POST['icono'])) ? $_POST['icono'] : "";
+      $icono = (isset($_FILES["icono"]["name"])) ? $_FILES['icono']["name"] : "";
       $Titulo = (isset($_POST['Titulo'])) ? $_POST['Titulo'] : "";
       $Descripcion = (isset($_POST['Descripcion'])) ? $_POST['Descripcion'] : "";
      
@@ -34,10 +36,10 @@ if(isset($_GET['txtID'])){
      Descripcion=:Descripcion
      WHERE ID=:ID");
      
-      $sentencia->bindParam(":icono", $icono);
+      $sentencia->bindParam(":icono", $icono);  //img
+
       $sentencia->bindParam(":Titulo", $Titulo);
       $sentencia->bindParam(":Descripcion", $Descripcion);
-     
       $sentencia->bindParam(":ID", $txtID);
      
      
@@ -70,16 +72,16 @@ include("../../templates/header.php");?>
         </div>
         
 
-        <div class="mb-3">
+        <div class="mb-3"> 
             <label for="" class="form-label">Icono:</label>
             <input
                 value="<?php echo $icono;?>"
-                type="text"
+                type="file"
                 class="form-control"
                 name="icono"
                 id="icono"
-                aria-describedby="helpId"
-                placeholder="Icono"
+                placeholder="Imagen"
+                aria-describedby="fileHelpId"
             />
             
         </div>

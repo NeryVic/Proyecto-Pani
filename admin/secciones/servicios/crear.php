@@ -2,13 +2,23 @@
 include("../../bd.php");
 if($_POST){
     //Recepcionamos los valores del formulario.
-    $icono = (isset($_POST['icono'])) ? $_POST['icono'] : "";
+    $icono = (isset($_FILES["icono"]["name"])) ? $_FILES['icono']["name"] : "";
     $Titulo = (isset($_POST['Titulo'])) ? $_POST['Titulo'] : "";
     $Descripcion = (isset($_POST['Descripcion'])) ? $_POST['Descripcion'] : "";
+
+    $fecha_imagen=new DateTime();
+
+    $nombre_archivo_imagen=($icono !="")?$fecha_imagen->getTimestamp()."_".$icono:"ALE MANCO"; //
+
+    $tmp_imagen = $_FILES["icono"]["tmp_name"]; 
+    if($tmp_imagen!="") {
+        move_uploaded_file($tmp_imagen, "../../../assets/img/".$nombre_archivo_imagen);
+    }
 
     $sentencia = $conexion->prepare("INSERT INTO `tbl_servicios` (`ID`, `icono`, `titulo`, `descripcion`) 
     VALUES (NULL, :icono, :Titulo, :Descripcion);");
 
+    //
     $sentencia->bindParam(":icono", $icono);
     $sentencia->bindParam(":Titulo", $Titulo);
     $sentencia->bindParam(":Descripcion", $Descripcion);
@@ -32,22 +42,18 @@ include("../../templates/header.php");?>
         
         <form action="" enctype="multipart/form-data" method="post">
 
-
-        <div class="mb-3">
+        <div class="mb-3"> 
             <label for="" class="form-label">Icono:</label>
             <input
-                type="text"
+                type="file"
                 class="form-control"
                 name="icono"
                 id="icono"
-                aria-describedby="helpId"
-                placeholder="Icono"
+                placeholder="Imagen"
+                aria-describedby="fileHelpId"
             />
             
         </div>
-        
-
-    
         
 
 
