@@ -1,4 +1,15 @@
-<?php include("../../templates/header.php");?>
+<?php 
+include("../../bd.php");
+if($_POST){
+    print_r($_POST);
+}
+
+
+
+
+
+include("../../templates/header.php");?>
+
 
 
 
@@ -12,14 +23,14 @@
 
     
     <div class="mb-3">
-    <label for="" class="form-label">Titulo:</label>
+    <label for="" class="form-label">Título:</label>
     <input
         type="text"
         class="form-control"
-        name=""
-        id=""
+        name="titulo"
+        id="titulo"
         aria-describedby="titulo"
-        placeholder="Titulo"
+        placeholder="Título"
     />
 </div>
 
@@ -31,7 +42,7 @@
         type="text"
         class="form-control"
         name="Subtitulo"
-        id=""
+        id="Subtitulo"
         aria-describedby="helpId"
         placeholder="Suptitulo"
     />
@@ -64,17 +75,17 @@
             type="submit"
             class="btn btn-success"
         >
-            Agregar</button>
-
+            Agregar
+        </button>
+        
         <a
             name=""
             id=""
             class="btn btn-primary"
             href="index.php"
             role="button"
-            >Cancelar</a>
-
-
+            >Cancelar</a
+        >
 
 </form>
 <div class="card-footer text-muted"></div>
