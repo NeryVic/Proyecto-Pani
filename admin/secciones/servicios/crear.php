@@ -8,7 +8,7 @@ if($_POST){
 
     $fecha_imagen=new DateTime();
 
-    $nombre_archivo_imagen=($icono !="")?$fecha_imagen->getTimestamp()."_".$icono:"ALE MANCO"; //
+    $nombre_archivo_imagen=($icono !="")?$fecha_imagen->getTimestamp()."_".$icono:""; //
 
     $tmp_imagen = $_FILES["icono"]["tmp_name"]; 
     if($tmp_imagen!="") {

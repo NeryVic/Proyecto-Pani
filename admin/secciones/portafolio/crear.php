@@ -30,7 +30,7 @@
     <input
         type="text"
         class="form-control"
-        name="subtitulo"
+        name="Subtitulo"
         id=""
         aria-describedby="helpId"
         placeholder="Suptitulo"
@@ -60,9 +60,19 @@
         placeholder="Descripcion"
     />
 </div>
+<button
+            type="submit"
+            class="btn btn-success"
+        >
+            Agregar</button>
 
-
-
+        <a
+            name=""
+            id=""
+            class="btn btn-primary"
+            href="index.php"
+            role="button"
+            >Cancelar</a>
 
 
 
