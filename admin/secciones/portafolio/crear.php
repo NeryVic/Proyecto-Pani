@@ -1,8 +1,16 @@
 <?php 
 include("../../bd.php");
 if($_POST){
-    print_r($_POST);
-    print_r($_FILES);
+
+    //Recepcionamos los valores del formulario.
+    $titulo = (isset($_POST['titulo'])) ? $_POST['titulo'] : "";
+    $subtitulo = (isset($_POST['subtitulo'])) ? $_POST['subtitulo'] : "";
+    $imagen=(isset($_FILES["imagen"]["name"])) ? $_FILES["imagen"] ["name"]:"";
+    $descripcion = (isset($_POST['descripcion'])) ? $_POST['descripcion'] : "";
+
+
+
+
 }
 
 
@@ -78,22 +86,23 @@ include("../../templates/header.php");?>
         placeholder="Descripcion"
     />
 </div>
-
 <button
-            type="submit"
-            class="btn btn-success"
-        >
-            Agregar
+    type="submit"
+    class="btn btn-success btn-sm"
+>
+    Agregar
 </button>
-        
-        <a
-            name=""
-            id=""
-            class="btn btn-primary"
-            href="index.php"
-            role="button"
-            >Cancelar</a
-        >
+
+<a
+    name=""
+    id=""
+    class="btn btn-primary btn-sm"
+    href="index.php"
+    role="button"
+>
+    Cancelar
+</a>
+
 
 </form>
 <div class="card-footer text-muted"></div>
