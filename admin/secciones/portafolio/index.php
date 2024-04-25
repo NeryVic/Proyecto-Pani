@@ -1,4 +1,15 @@
-<?php include("../../templates/header.php");?>
+<?php 
+include("../../bd.php");
+
+//Seleccionar registros
+$sentencia = $conexion->prepare("SELECT * FROM `tbl_portafolio`");
+$sentencia-> execute();
+$lista_portafolio=$sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+
+include("../../templates/header.php");?>
 
 <div class="card">
     <div class="card-header">
@@ -6,7 +17,7 @@
             name=""
             id=""
             class="btn btn-primary"
-            href="#"
+            href="crear.php"
             role="button"
             >Agregar registro</a
         >  
@@ -20,12 +31,12 @@
         >
             <thead>
                 <tr>
-                    <td scope="col">ID</td>
-                    <td scope="col">Titulo</td>
-                    <td scope="col">Subtitulo</td>
-                    <td scope="col">Descripcion</td>
-                    <td scope="col">Imagen</td>
-                    <td scope="col">Acciones</td>
+                    <th scope="col">ID</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Subtitulo</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -35,7 +46,7 @@
                     <td scope="col">Subtitulo</td>
                     <td scope="col">Descripcion</td>
                     <td scope="col">Imagen</td>
-                    <td scope="col">Acciones</td>
+                    <td scope="col">Editar|Elminar</td>
                 </tr>
             </tbody>
         </table>

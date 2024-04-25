@@ -2,6 +2,7 @@
 include("../../bd.php");
 if($_POST){
     print_r($_POST);
+    print_r($_FILES);
 }
 
 
@@ -14,8 +15,14 @@ include("../../templates/header.php");?>
 
 
 <div class="card">
+    
+
     <div class="card-header">Producto del portafolio</div>
+    
+    
     <div class="card-body">
+    
+    
     <form action=""ectype="multipart/form-data" method="post">
 
 
@@ -71,12 +78,13 @@ include("../../templates/header.php");?>
         placeholder="Descripcion"
     />
 </div>
+
 <button
             type="submit"
             class="btn btn-success"
         >
             Agregar
-        </button>
+</button>
         
         <a
             name=""
