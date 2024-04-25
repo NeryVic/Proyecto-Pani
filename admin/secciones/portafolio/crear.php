@@ -8,6 +8,8 @@ if($_POST){
     $imagen=(isset($_FILES["imagen"]["name"])) ? $_FILES["imagen"] ["name"]:"";
     $descripcion = (isset($_POST['descripcion'])) ? $_POST['descripcion'] : "";
 
+    $sentencia = $conexion->prepare("INSERT INTO `tbl_portafolio` (`ID`, `icono`, `titulo`, `descripcion`) 
+    VALUES (NULL, :icono, :Titulo, :Descripcion);");
 
 
 
