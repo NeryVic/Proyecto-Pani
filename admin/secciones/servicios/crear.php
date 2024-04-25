@@ -7,8 +7,6 @@ if($_POST){
     $Descripcion = (isset($_POST['Descripcion'])) ? $_POST['Descripcion'] : "";
 
     $fecha_imagen=new DateTime();
-    $nombre_archivo_imagen=($icono !="")?$fecha_imagen->getTimestamp()."_".$icono:"ALE MANCO"; //
-
     $nombre_archivo_imagen=($icono !="")?$fecha_imagen->getTimestamp()."_".$icono:""; //
 
     $tmp_imagen = $_FILES["icono"]["tmp_name"]; 
@@ -25,6 +23,9 @@ if($_POST){
     $sentencia->bindParam(":Descripcion", $Descripcion);
 
     $sentencia->execute();
+
+    $mensaje="Registro agregado con éxito,";
+    header("Location:index.php?mensaje=".$mensaje);
 }
 
 

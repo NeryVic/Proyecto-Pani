@@ -68,14 +68,11 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                     <h2 class="section-heading text-uppercase">productos destacados</h2>
                     <h3 class="section-subheading text-muted"></h3>
                 </div>
-<!-- 
+
                     <div class="row text-center">
                     <?php foreach($lista_servicios as $registros){ ?>
                     <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                        </span>
+                    <img src="assets/img/servicios/<?php echo $registros['icono'] ?>" class="d-block w-100" alt="...">
                         <h4 class="my-3"><?php echo $registros['titulo'] ?></h4>
                         <p class="text-muted"><?php echo $registros['descripcion'] ?></p>
                     </div>
@@ -83,26 +80,31 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 
 
                 </div>
-            </div> -->
+            </div> 
                 <!-- Carousel -->
+                <!-- 
                 <div id="carouselExampleCaptions" class="carousel slide">
+                
                     <div class="carousel-indicators">
                       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
                       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
+                    
                     <div class="carousel-inner">
+                    
                       <div class="carousel-item active">
 
-                        <?php foreach($lista_servicios as $registros){ ?>
-                        <img src="assets/img/portfolio/1.jpg" class="d-block w-100" alt="...">
+                      <?php foreach($lista_servicios as $registros){ ?>
+                        <img src="assets/img/servicios/1.jpg" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                           <h5><?php echo $registros['titulo'] ?></h5>
                           <p><?php echo $registros['descripcion'] ?></p>
                         </div>
                         <?php }?>
-
+                       
                       </div>
+                     
                       <div class="carousel-item">
                         <img src="assets/img/portfolio/2.jpg" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
@@ -118,6 +120,7 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                         </div>
                       </div>
                     </div>
+                            -->
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                       <span class="visually-hidden">Previous</span>
