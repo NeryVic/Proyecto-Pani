@@ -30,6 +30,7 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
         
     </head>
     <body id="page-top">
+        
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             
@@ -50,18 +51,31 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                         <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
                     </ul>
                 </div>
+
             </div>
+ 
         </nav>
+              
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
                 <div class="masthead-subheading">¡BIENVENIDO A MADERAS PANI!</div>
                 <div class="masthead-heading text-uppercase">TE INVITAMOS A CONOCERNOS</div>
-                <a class="btn btn-primary btn-xl text-uppercase btnNery" href="#services">DIME MÁS</a>
-            
+                <a class="btn btn-primary btn-xl text-uppercase" href="#services">DIME MÁS</a> 
+                
+           
+            </div>
+              <!-- bton de wssp-->
+
+           <div>
+            <a href="wsspp" class="wssp">
+                <img class="wssp-img" src="assets/img/wssp.png" alt="Contactar por whatsapp"  width="55" height="55">
+            </a>
             </div>
         </header>
+       
         <!-- Services-->
+        
         <section class="page-section" id="services">
             <div class="container">
                 <div class="text-center">
@@ -83,16 +97,6 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
             </div> 
                 
 
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
-  
         </section>
         <!-- Portfolio Grid-->
         <section class="page-section bg-light" id="portfolio">
@@ -383,6 +387,7 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                 </div>
             </div>
+                                 
         </footer>
         <!-- Portfolio Modals-->
         <!-- Portfolio item 1 modal popup-->

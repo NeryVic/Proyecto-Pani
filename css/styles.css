@@ -106,6 +106,7 @@ body {
   background-color: #fdf0b38c; /* cambiar color de fondo de la página */
 }
 
+
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -322,6 +323,54 @@ caption {
   color: #6c757d;
   text-align: left;
 }
+/*----------------------------------------------------*/
+.wssp {
+  margin-left: 700px;
+  position: absolute;
+  padding: 19px;
+  padding-top: 14px;
+}
+
+.wssp::before,
+.wssp::after {
+  content: '';
+  position: absolute;
+  margin-left: 20px;
+  left: 4px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #00e676;
+  opacity: 0;
+  animation: ondaa 1.75s infinite !important;
+}
+
+.wssp::before {
+  animation-delay: 1s;
+}
+
+.wssp::after {
+  animation-delay: 1.25s;
+}
+
+.wssp, .wssp-img {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes ondaa  {
+  0% {
+      transform: scale(1);
+  }
+  15% {
+      opacity: 1;
+  }
+  100% {
+      transform: scale(2.5);
+      opacity: 0;
+  }
+}
+/*----------------------------------------------------*/
 
 th {
   text-align: inherit;
