@@ -8,8 +8,17 @@ if($_POST){
     $imagen=(isset($_FILES["imagen"]["name"])) ? $_FILES["imagen"] ["name"]:"";
     $descripcion = (isset($_POST['descripcion'])) ? $_POST['descripcion'] : "";
 
-    $sentencia = $conexion->prepare("INSERT INTO `tbl_portafolio` (`ID`, `icono`, `titulo`, `descripcion`) 
-    VALUES (NULL, :icono, :Titulo, :Descripcion);");
+    $sentencia = $conexion->prepare("INSERT INTO `tbl_portafolio` (`ID`, `titulo`, `subtitulo`, `imagen`, `descripcion`) 
+    VALUES (NULL, 'ejemplo de implementacion del portafolio', 'creacion de la conexion de bd y la pag', 'asdsaidh', 'asdsada'");
+    $sentencia->execute();
+
+    $sentencia->bindParam(":Titulo", $Titulo);
+    $sentencia->bindParam(":subtitulo", $subtitulo);
+    $sentencia->bindParam(":descripcion", $descripcion);
+
+
+
+
 
 
 
