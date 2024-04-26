@@ -61,12 +61,13 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
             <div class="container">
                 <div class="masthead-subheading">¡BIENVENIDO A MADERAS PANI!</div>
                 <div class="masthead-heading text-uppercase">TE INVITAMOS A CONOCERNOS</div>
-                <a class="btn btn-primary btn-xl text-uppercase btnNery" href="#services">DIME MÁS</a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="#services">DIME MÁS</a> 
+                
            
             </div>
               <!-- bton de wssp-->
 
-         <div>
+           <div>
             <a href="wsspp" class="wssp">
                 <img class="wssp-img" src="assets/img/wssp.png" alt="Contactar por whatsapp"  width="55" height="55">
             </a>
