@@ -65,19 +65,21 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                 
            
             </div>
-              <!-- bton de wssp-->
-
-           <div>
-            <a href="wsspp" class="wssp">
-                <img class="wssp-img" src="assets/img/wssp.png" alt="Contactar por whatsapp"  width="55" height="55">
-            </a>
-            </div>
+              
         </header>
        
         <!-- Services-->
         
         <section class="page-section" id="services">
+            <!-- bton de wssp-->
+            <div class="wssp wssp-container">
+              <a href="wsspp" class="wsspss">
+                <img class="wsspp-img" src="assets/img/wssp.png" alt="Contactar por whatsapp"  width="55" height="55">
+              </a>
+              </div>
+                <!-- bton de wssp-->
             <div class="container">
+                 
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">productos destacados</h2>
                     <h3 class="section-subheading text-muted"></h3>
@@ -91,16 +93,21 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                         <p class="text-muted"><?php echo $registros['descripcion'] ?></p>
                     </div>
                     <?php }?>
-
-
                 </div>
-            </div> 
                 
-
+            </div> 
+                   
         </section>
         <!-- Portfolio Grid-->
         <section class="page-section bg-light" id="portfolio">
             <div class="container">
+                <!-- bton de wssp-->
+              <div class="wssp-container">
+              <a href="https://wa.me/543704016066" class="wssp">
+                <img class="wssp-img" src="assets/img/wssp.png" alt="Contactar por whatsapp"  width="55" height="55">
+              </a>
+              </div>
+                <!-- bton de wssp-->
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Nuestro trabajo</h2>
                     <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>

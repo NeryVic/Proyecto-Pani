@@ -324,50 +324,23 @@ caption {
   text-align: left;
 }
 /*----------------------------------------------------*/
-.wssp {
-  margin-left: 700px;
-  position: absolute;
-  padding: 19px;
-  padding-top: 14px;
+
+.wssp-container {
+  position: fixed; /*mantiene se fija en la pantalla*/
+  bottom: 0;
+  padding-bottom: 45px;
+  right: 20px;
+  width: 5.333%;
+  z-index: 2; /*mantiene el elemento por encima de otros*/
 }
 
-.wssp::before,
-.wssp::after {
-  content: '';
-  position: absolute;
-  margin-left: 20px;
-  left: 4px;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background-color: #00e676;
-  opacity: 0;
-  animation: ondaa 1.75s infinite !important;
-}
 
-.wssp::before {
-  animation-delay: 1s;
-}
-
-.wssp::after {
-  animation-delay: 1.25s;
-}
-
-.wssp, .wssp-img {
-  position: relative;
-  z-index: 2;
-}
-
-@keyframes ondaa  {
-  0% {
-      transform: scale(1);
-  }
-  15% {
-      opacity: 1;
-  }
-  100% {
-      transform: scale(2.5);
-      opacity: 0;
+@media(max-width: 800px) {
+  .wssp-container {
+    bottom: 0;
+    padding-bottom: 30px;
+    right: -35px;
+    padding-right: 100px;
   }
 }
 /*----------------------------------------------------*/
@@ -11025,7 +10998,7 @@ header.masthead .masthead-heading {
 }
 
 @media (min-width: 768px) {
-  header.masthead {
+  header.masthead  {
     padding-top: 17rem;
     padding-bottom: 12.5rem;
   }
@@ -11042,6 +11015,7 @@ header.masthead .masthead-heading {
     line-height: 4.5rem;
     margin-bottom: 4rem;
   }
+
 }
 #portfolio .portfolio-item {
   max-width: 26rem;
