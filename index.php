@@ -328,7 +328,7 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                 <!-- To make this form functional, sign up at-->
                 <!-- https://startbootstrap.com/solution/contact-forms-->
                 <!-- to get an API token!-->
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                <form id="contactForm" action="https://formsubmit.co/vnd22victor@gmail.com" method="POST">
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -374,7 +374,8 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                     <!-- an error submitting the form-->
                     <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                     <!-- Submit Button-->
-                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Send Message</button></div>
+                 <!--   <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit" >Send Message</button></div>-->
+                    <div class="text-center"><input type="submit" class="btn btn-primary btn-xl text-uppercase" value="Enviar"></div>
                 </form>
             </div>
         </section>
