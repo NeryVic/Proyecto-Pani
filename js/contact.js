@@ -12,3 +12,7 @@ Email.send({
 }).then(
   message => alert(message)
 );
+
+let cadena = "hola mundo";
+let resultado = cadena.split(" ");
+console.log(resultado.length);

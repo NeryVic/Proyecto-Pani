@@ -1,0 +1,12 @@
+{
+  "name": "proyecto-pani",
+  "version": "1.0.0",
+  "description": "Maderas PANI: es una pequeña y dinámica empresa dedicada a la intermediación en la venta de maderas a nivel nacional. Nos especializamos en conectar a proveedores de madera con clientes en todo el país, facilitando transacciones eficientes y satisfaciendo las necesidades de ambas partes. Nuestra empresa se distingue por ofrecer un servicio personalizado y de alta calidad, respaldado por nuestro compromiso con la excelencia y la satisfacción del cliente.",
+  "main": "index.js",
+  "scripts": {
+    "build": "purgecss --css css/styles.css --content index.php -o css/styles2.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
