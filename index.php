@@ -27,6 +27,13 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles2.css" rel="stylesheet" />
         <link rel="stylesheet" href="css/estilosProducto.css">
+        <!-- email-->
+        <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+        <script type="text/javascript">
+        emailjs.init('2IovDsFN41NUSebg_')
+        </script>
         
     </head>
     <body id="page-top">
@@ -314,6 +321,8 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
         </section>
         <!-- Clients-->
 
+
+
         <!-- Contact-->
         <section class="page-section" id="contact">
             <div class="container">
@@ -328,30 +337,31 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                 <!-- To make this form functional, sign up at-->
                 <!-- https://startbootstrap.com/solution/contact-forms-->
                 <!-- to get an API token!-->
-                <form id="contactForm" action="https://formsubmit.co/vnd22victor@gmail.com" method="POST">
+                <form id="contactForm">
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <!-- Name input-->
-                                <input class="form-control" id="name" type="text" placeholder="Nombre *" data-sb-validations="required" />
+                                <input class="form-control" name="from_name" id="from_name" type="text" placeholder="Nombre *" data-sb-validations="required" />
                                 <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                             </div>
                             <div class="form-group">
                                 <!-- Email address input-->
-                                <input class="form-control" id="email" type="email" placeholder="Tu Email *" data-sb-validations="required,email" />
+                                <input class="form-control" id="email_id" name="email_id" type="email" placeholder="Tu Email *" data-sb-validations="required,email" />
                                 <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
                                 <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                             </div>
                             <div class="form-group mb-md-0">
                                 <!-- Phone number input-->
-                                <input class="form-control" id="phone" type="tel" placeholder="Tu telefono *" data-sb-validations="required" />
+                                <input class="form-control" id="phone" name="phone" type="tel" placeholder="Tu telefono *" data-sb-validations="required" />
                                 <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
                             </div>
+                            
                         </div>
                         <div class="col-md-6">
                             <div class="form-group form-group-textarea mb-md-0">
                                 <!-- Message input-->
-                                <textarea class="form-control" id="message" placeholder="Tu mensaje *" data-sb-validations="required"></textarea>
+                                <textarea class="form-control" id="message" name="message" placeholder="Tu mensaje *" data-sb-validations="required"></textarea>
                                 <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
                             </div>
                         </div>
@@ -374,10 +384,14 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                     <!-- an error submitting the form-->
                     <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                     <!-- Submit Button-->
-                 <!--   <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit" >Send Message</button></div>-->
-                    <div class="text-center"><input type="submit" class="btn btn-primary btn-xl text-uppercase" value="Enviar"></div>
+                    <div class="text-center">
+                        <button class="btn btn-primary btn-xl text-uppercase " id="button" type="submit" >Send Message</button>
+                    </div>
+                    
                 </form>
             </div>
+
+
         </section>
         <!-- Footer-->
         <footer class="footer py-4">
@@ -612,5 +626,8 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <!-- contact JS-->
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script src="js/contact.js"></script>
     </body>
 </html>
