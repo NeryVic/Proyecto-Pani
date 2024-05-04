@@ -34,6 +34,8 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
         <script type="text/javascript">
         emailjs.init('2IovDsFN41NUSebg_')
         </script>
+
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         
     </head>
     <body id="page-top">
@@ -353,7 +355,7 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                             </div>
                             <div class="form-group mb-md-0">
                                 <!-- Phone number input-->
-                                <input class="form-control" id="phone" name="phone" type="tel" placeholder="Tu telefono *" data-sb-validations="required" />
+                                <input class="form-control" id="phone" name="phone" type="tel" placeholder="Tu teléfono (opcional)" data-sb-validations="required" />
                                 <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
                             </div>
                             
@@ -384,8 +386,8 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                     <!-- an error submitting the form-->
                     <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                     <!-- Submit Button-->
-                    <div class="text-center">
-                        <button class="btn btn-primary btn-xl text-uppercase " id="button" type="submit" >Send Message</button>
+                    <div class="text-center">          
+                        <input class="btn btn-primary btn-xl text-uppercase " id="button" type="submit" value="Enviar">
                     </div>
                     
                 </form>
