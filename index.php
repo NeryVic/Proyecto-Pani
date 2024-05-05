@@ -322,9 +322,6 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </section>
         <!-- Clients-->
-
-
-
         <!-- Contact-->
         <section class="page-section" id="contact">
             <div class="container">
@@ -332,13 +329,6 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                     <h2 class="section-heading text-uppercase">CONTÁCTENOS</h2>
                     <h3 class="section-subheading text-muted">Su consulta nos interesa</h3>
                 </div>
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- * * SB Forms Contact Form * *-->
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- This form is pre-integrated with SB Forms.-->
-                <!-- To make this form functional, sign up at-->
-                <!-- https://startbootstrap.com/solution/contact-forms-->
-                <!-- to get an API token!-->
                 <form id="contactForm">
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
@@ -351,12 +341,10 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                                 <!-- Email address input-->
                                 <input class="form-control" id="email_id" name="email_id" type="email" placeholder="Tu Email *" data-sb-validations="required,email" />
                                 <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                             </div>
                             <div class="form-group mb-md-0">
                                 <!-- Phone number input-->
                                 <input class="form-control" id="phone" name="phone" type="tel" placeholder="Tu teléfono (opcional)" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
                             </div>
                             
                         </div>
@@ -368,32 +356,12 @@ $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                             </div>
                         </div>
                     </div>
-                    <!-- Submit success message-->
-                    <!---->
-                    <!-- This is what your users will see when the form-->
-                    <!-- has successfully submitted-->
-                    <div class="d-none" id="submitSuccessMessage">
-                        <div class="text-center text-white mb-3">
-                            <div class="fw-bolder">Form submission successful!</div>
-                            To activate this form, sign up at
-                            <br />
-                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                        </div>
-                    </div>
-                    <!-- Submit error message-->
-                    <!---->
-                    <!-- This is what your users will see when there is-->
-                    <!-- an error submitting the form-->
-                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                     <!-- Submit Button-->
                     <div class="text-center">          
                         <input class="btn btn-primary btn-xl text-uppercase " id="button" type="submit" value="Enviar">
                     </div>
-                    
                 </form>
             </div>
-
-
         </section>
         <!-- Footer-->
         <footer class="footer py-4">
