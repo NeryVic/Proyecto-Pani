@@ -48,7 +48,7 @@ include("../../templates/header.php");?>
                 <td scope="col"><?php echo $registros['ID']; ?></td>
                     <td scope="col"><?php echo $registros['titulo']; ?></td>
                     <td scope="col"><?php echo $registros['subtitulo']; ?></td>
-                    <td scope="col">Imagen.jpg</td>
+                    <td scope="col" <?php echo $registros['imagen']; ?> ></td>
                     <td scope="col"><?php echo $registros['descripcion']; ?></td>
                     <td scope="col"><a
                             name=""
