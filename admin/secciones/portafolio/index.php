@@ -34,8 +34,7 @@ include("../../templates/header.php");
 ?>
 
 <div class="card">
-    <div class="card-header"></div>
-    <a href="crear.php" class="btn btn-primary" role="button">Agregar registroogit</a>
+
     <div class="card-header">
         <a href="crear.php" class="btn btn-primary" role="button">Agregar registro</a>
     </div>
