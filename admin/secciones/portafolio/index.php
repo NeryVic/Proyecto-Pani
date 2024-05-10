@@ -9,18 +9,19 @@ if(isset($_GET['txtID'])){
     $sentencia = $conexion->prepare("SELECT imagen FROM tbl_portafolio WHERE ID=:ID");
     $sentencia->bindParam(":ID", $txtID);
     $sentencia->execute();
-    $registro_imagen = $sentencia->fetch(PDO::FETCH_LAZY);
+    $registro_imagen = $sentencia->fetch(PDO::FETCH_ASSOC);
     
- // Verificar si la imagen existe y eliminarla
-if(isset($registro_imagen["imagen"])){
-    if(file_exists("../../../asset/img/portfolio/".$registro_imagen["imagen"])){
-        echo "encontrada...";
-        
-        // Eliminar el registro de la base de datos
-        $sentencia = $conexion->prepare("DELETE FROM tbl_portafolio WHERE ID=:ID");
-        $sentencia->bindParam(":ID", $txtID);
-        $sentencia->execute();
-    }
+    // Verificar si la imagen existe y eliminarla
+    if(isset($registro_imagen["imagen"])){
+       
+        if(file_exists("../../../asset/img/portfolio/".$registro_imagen["imagen"])){
+           echo "encontrada...";
+    
+}
+    // Eliminar el registro de la base de datos
+    $sentencia = $conexion->prepare("DELETE FROM tbl_portafolio WHERE ID=:ID");
+    $sentencia->bindParam(":ID", $txtID);
+    $sentencia->execute();
 }
 }
 // Seleccionar registros
@@ -32,7 +33,6 @@ include("../../templates/header.php");
 ?>
 
 <div class="card">
-
     <div class="card-header">
         <a href="crear.php" class="btn btn-primary" role="button">Agregar registro</a>
     </div>
@@ -56,15 +56,15 @@ include("../../templates/header.php");
                         <td><?php echo $registro['titulo']; ?></td>
                         <td><?php echo $registro['subtitulo']; ?></td>
                         <td>
-                        <img width="50" height="50" src="../../../assets/img/portfolio/<?php echo $registro['imagen']; ?>" alt="Imagen del portafolio">
+                        <img width="50" height="50" src="../../../assets/img/portafolio/<?php echo $registro['imagen']; ?>" alt="Imagen del portafolio">
                         </td>
                         <td><?php echo $registro['descripcion']; ?></td>
                         <td>
                             <a href="editar.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-info" role="button">Editar</a>
-                            <a href="index.php?txtID=<?php echo $registro['ID'];?>" class="btn btn-danger" role="button">Eliminar</a>
+                            <a href="eliminar.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-danger" role="button">Eliminar</a>
                         </td>
                     </tr>
-                <?php } ?>
+                    <?php }?>
                 </tbody>
             </table>
         </div>
