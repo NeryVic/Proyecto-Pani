@@ -57,7 +57,7 @@ include("../../templates/header.php");
                         <td><?php echo $registro['titulo']; ?></td>
                         <td><?php echo $registro['subtitulo']; ?></td>
                         <td>
-                            <img width="50" height="50" src="../../../assets/img/portfolio/<?php echo $registro['imagen']; ?>" alt="Imagen del portafolio">
+                        <img width="50" height="50" src="../../../assets/img/portfolio/<?php echo $registro['imagen']; ?>" alt="Imagen del portafolio">
                         </td>
                         <td><?php echo $registro['descripcion']; ?></td>
                         <td>

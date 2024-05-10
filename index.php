@@ -87,7 +87,7 @@ $lista_portfolio=$sentencia->fetchAll(PDO::FETCH_ASSOC);
         <section class="page-section" id="services">
             <!-- bton de wssp-->
             <div class="wssp wssp-container">
-              <a href="wsspp" class="wsspss">
+              <a href="https://api.whatsapp.com/send?phone=3704016066" class="wsspss">
                 <img class="wsspp-img" src="assets/img/wssp.png" alt="Contactar por whatsapp"  width="55" height="55">
               </a>
               </div>
