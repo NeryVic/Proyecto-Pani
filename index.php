@@ -120,24 +120,24 @@ $lista_portfolio=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                     <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
                 <div class="row">
-                <?php foreach($lista_portfolio as $registros){ ?>
+                <?php foreach($lista_portfolio as $registro){ ?>
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <!-- Portfolio item 1-->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1<?php echo $registros['ID'] ?>">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1<?php echo $registro['ID'] ?>">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/<?php echo $registros['imagen'] ?>" alt="..." />
+                                <img class="img-fluid" src="assets/img/portfolio/<?php echo $registro['imagen'] ?>" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading"><?php echo $registros['titulo'] ?></div>
-                                <div class="portfolio-caption-subheading text-muted"><?php echo $registros['subtitulo'] ?></div>
+                                <div class="portfolio-caption-heading"><?php echo $registro['titulo'] ?></div>
+                                <div class="portfolio-caption-subheading text-muted"><?php echo $registro['subtitulo'] ?></div>
                             </div>
                         </div>
                     </div>
                     <!-- Portfolio item 1 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal1<?php echo $registros['ID'] ?>" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="portfolio-modal modal fade" id="portfolioModal1<?php echo $registro['ID'] ?>" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
@@ -146,10 +146,10 @@ $lista_portfolio=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase"><?php echo $registros['titulo'] ?></h2>
-                                    <p class="item-intro text-muted"><?php echo $registros['subtitulo'] ?></p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/<?php echo $registros['imagen'] ?>" alt="..." />
-                                    <p><?php echo $registros['descripcion'] ?></p>
+                                    <h2 class="text-uppercase"><?php echo $registro['titulo'] ?></h2>
+                                    <p class="item-intro text-muted"><?php echo $registro['subtitulo'] ?></p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/<?php echo $registro['imagen'] ?>" alt="..." />
+                                    <p><?php echo $registro['descripcion'] ?></p>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-xmark me-1"></i>
                                         Cerrar
