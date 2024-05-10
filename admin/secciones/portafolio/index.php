@@ -13,7 +13,7 @@ if(isset($_GET['txtID'])){
     
     // Verificar si la imagen existe y eliminarla
     if(isset($registro_imagen["imagen"])){
-        $ruta_imagen = "../../../assets/img/portafolio/".$registro_imagen["imagen"];
+        $ruta_imagen = "../../../assets/img/portfolio/".$registro_imagen["imagen"];
         if(file_exists($ruta_imagen)){
             unlink($ruta_imagen);
         }
