@@ -5,7 +5,7 @@ if($_POST){
     //Recepcionamos los valores del formulario.
     $titulo = (isset($_POST['Titulo'])) ? $_POST['Titulo'] : "";
     $subtitulo = (isset($_POST['Subtitulo'])) ? $_POST['Subtitulo'] : "";
-    $imagen = (isset($_FILES["icono"]["name"])) ? $_FILES["icono"]["name"] : "";
+    $imagen = (isset($_FILES["Imagen"]["name"])) ? $_FILES["Imagen"]["name"] : "";
     $descripcion = (isset($_POST['Descripcion'])) ? $_POST['Descripcion'] : "";
 
     $sentencia = $conexion->prepare("INSERT INTO `tbl_portafolio` (`ID`, `titulo`, `subtitulo`, `imagen`, `descripcion`) 
@@ -47,12 +47,12 @@ include("../../templates/header.php");
                 />
             </div>
             <div class="mb-3"> 
-                <label for="icono" class="form-label">Imagen:</label>
+                <label for="Imagen" class="form-label">Imagen:</label>
                 <input
                     type="file"
                     class="form-control"
-                    name="icono"
-                    id="icono"
+                    name="Imagen"
+                    id="Imagen"
                     placeholder="Imagen"
                 />
             </div>
