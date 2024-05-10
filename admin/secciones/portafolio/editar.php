@@ -76,7 +76,7 @@ include("../../templates/header.php");
             </div>
             <div class="mb-3"> 
                 <label for="icono" class="form-label">Imagen:</label>
-                <img src="../../../assets/img/portfolio/<?php echo htmlspecialchars($imagen); ?>" alt="Imagen actual">
+                <img width="50" height="50" src="../../../assets/img/portfolio/<?php echo htmlspecialchars($imagen); ?>" alt="Imagen actual">
                 <input type="file" class="form-control" name="icono" id="icono" placeholder="Imagen">
             </div>
             <div class="mb-3">

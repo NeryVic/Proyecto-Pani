@@ -132,7 +132,7 @@ $lista_portfolio=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                             </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading"><?php echo $registros['titulo'] ?></div>
-                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
+                                <div class="portfolio-caption-subheading text-muted"><?php echo $registros['subtitulo'] ?></div>
                             </div>
                         </div>
                     </div>
@@ -147,22 +147,12 @@ $lista_portfolio=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                                 <div class="modal-body">
                                     <!-- Project details-->
                                     <h2 class="text-uppercase"><?php echo $registros['titulo'] ?></h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Threads
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Illustration
-                                        </li>
-                                    </ul>
+                                    <p class="item-intro text-muted"><?php echo $registros['subtitulo'] ?></p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/<?php echo $registros['imagen'] ?>" alt="..." />
+                                    <p><?php echo $registros['descripcion'] ?></p>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-xmark me-1"></i>
-                                        Close Project
+                                        Cerrar
                                     </button>
                                 </div>
                             </div>
