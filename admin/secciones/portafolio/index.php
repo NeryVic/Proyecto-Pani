@@ -2,7 +2,7 @@
 include("../../bd.php");
 
 if(isset($_GET['txtID'])){
-    // Borrar registros
+    // Borrar registros, nery puto
     $txtID = isset($_GET['txtID']) ? $_GET['txtID'] : "";
     
     // Obtener nombre de la imagen para eliminarla
@@ -19,7 +19,7 @@ if(isset($_GET['txtID'])){
         }
     }
     
-    // Eliminar el registro de la base de datos
+    // Eliminar el registro de la base de datos 
     $sentencia = $conexion->prepare("DELETE FROM tbl_portafolio WHERE `tbl_portafolio`.`ID`=:ID");
     $sentencia->bindParam(":ID", $txtID);
     $sentencia->execute();
