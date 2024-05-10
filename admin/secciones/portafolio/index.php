@@ -3,22 +3,21 @@ include("../../bd.php");
 
 if(isset($_GET['txtID'])){
     // Borrar registros, nery puto
-    $txtID = isset($_GET['txtID']) ? $_GET['txtID'] : "";
+    $txtID=(isset ($_GET['txtID']) )? $_GET['txtID']:"";
     
     // Obtener nombre de la imagen para eliminarla
     $sentencia = $conexion->prepare("SELECT imagen FROM tbl_portafolio WHERE ID=:ID");
     $sentencia->bindParam(":ID", $txtID);
     $sentencia->execute();
-    $registro_imagen = $sentencia->fetch(PDO::FETCH_ASSOC);
+    $registro_imagen=$sentencia->fetch(PDO::FETCH_LAZY);
     
     // Verificar si la imagen existe y eliminarla
     if(isset($registro_imagen["imagen"])){
-        $ruta_imagen = "../../../assets/img/portfolio/".$registro_imagen["imagen"];
-        if(file_exists($ruta_imagen)){
-            unlink($ruta_imagen);
+       // $ruta_imagen = "../../../assets/img/portfolio/".$registro_imagen["imagen"];
+        if(file_exists("../../../assets/img/portfolio/".$registro_imagen["imagen"])){
+            unlink("../../../assets/img/portfolio/".$registro_imagen["imagen"]);
         }
     }
-    
     // Eliminar el registro de la base de datos 
     $sentencia = $conexion->prepare("DELETE FROM tbl_portafolio WHERE `tbl_portafolio`.`ID`=:ID");
     $sentencia->bindParam(":ID", $txtID);
