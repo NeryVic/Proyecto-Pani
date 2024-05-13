@@ -44,16 +44,7 @@ include("../../templates/header.php");?>
             placeholder="Nombre del usuario:"
         />
     </div>
-    <div class="mb-3">
-        <label for="" class="form-label">Password:</label>
-        <input
-            type="Password"
-            class="form-control"
-            name="password"
-            id="password"
-            aria-describedby="helpId"
-            placeholder="Password:"
-        />
+    
     </div>
  <div class="mb-3">
     <label for="" class="form-label">Correo:</label>
@@ -65,6 +56,16 @@ include("../../templates/header.php");?>
         aria-describedby="emailHelpId"
         placeholder="Correo:"
     /></div>
+    <div class="mb-3">
+        <label for="" class="form-label">Password:</label>
+        <input
+            type="Password"
+            class="form-control"
+            name="password"
+            id="password"
+            aria-describedby="helpId"
+            placeholder="Password:"
+        />
     
     <button type="submit" class="btn btn-success">Agregar</button>
             <a href="index.php" class="btn btn-primary">Cancelar</a>
