@@ -19,7 +19,7 @@ include("../../templates/header.php");
 
 <div class="card">
 
-    <div><a href="crear.php" class="btn btn-primary" role="button">Agregar registro</a></div>
+    <div class="card-header"><a href="crear.php" class="btn btn-primary" role="button">Agregar registro</a></div>
     <div class="card-body">
     <div class="table-responsive-sm">
         <table class="table">
@@ -47,6 +47,7 @@ include("../../templates/header.php");
         </table>
     </div>
 </div>
+<div class="card-footer text-muted"></div>
 </div>
 
 <?php include("../../templates/footer.php");?>

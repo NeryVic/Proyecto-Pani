@@ -74,14 +74,17 @@ include("../../templates/header.php");?>
             id="password"
             aria-describedby="helpId"
             placeholder="Password"
-        />
+        /> </div>
     
     <button type="submit" class="btn btn-success">Agregar</button>
             <a href="index.php" class="btn btn-primary">Cancelar</a>
 
 </form>
 
+</div>
 
+<div class="card-footer text-muted"> </div>
+    </div>
 
 
 
