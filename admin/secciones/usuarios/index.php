@@ -9,6 +9,7 @@ if (isset($_GET['txtID'])) {
     $sentencia->execute();
 }
 
+
 // Seleccionar registros
 $sentencia = $conexion->prepare("SELECT * FROM tbl_usuarios");
 $sentencia->execute();
@@ -40,7 +41,12 @@ include("../../templates/header.php");
                     <td scope="col">
                         <a href="editar.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-info" role="button">Editar</a>
                         <a href="index.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-danger" role="button">Eliminar</a>
+                        
                     </td>
+
+
+
+
                 </tr>
                 <?php } ?>
             </tbody>

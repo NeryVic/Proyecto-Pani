@@ -44,18 +44,7 @@ include("../../templates/header.php");?>
             placeholder="Nombre del usuario"
         />
     </div>
-    <div class="mb-3">
-        <label for="" class="form-label">Password:</label>
-        <input
-            type="Password"
-            class="form-control"
-            name="password"
-            id="password"
-            aria-describedby="helpId"
-            placeholder="Password"
-        />
-    </div>
- <div class="mb-3">
+<div class="mb-3">
     <label for="" class="form-label">Correo:</label>
     <input
         type="email"

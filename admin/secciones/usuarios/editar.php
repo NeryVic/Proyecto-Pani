@@ -14,7 +14,7 @@ include("../../templates/header.php");?>
             name="usuario"
             id="usuario"
             aria-describedby="helpId"
-            placeholder="Nombre del usuario:"
+            placeholder="Nombre del usuario"
         />
     </div>
     <div class="mb-3">
@@ -25,7 +25,7 @@ include("../../templates/header.php");?>
             name="password"
             id="password"
             aria-describedby="helpId"
-            placeholder="Password:"
+            placeholder="Password"
         />
     </div>
  <div class="mb-3">
@@ -36,7 +36,7 @@ include("../../templates/header.php");?>
         name="correo"
         id="correo"
         aria-describedby="emailHelpId"
-        placeholder="Correo:"
+        placeholder="Correo"
     /></div>
     
     <button type="submit" class="btn btn-success">Agregar</button>
