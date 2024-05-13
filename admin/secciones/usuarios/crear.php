@@ -52,7 +52,7 @@ include("../../templates/header.php");?>
             name="password"
             id="password"
             aria-describedby="helpId"
-            placeholder="Password:"
+            placeholder="Password"
         />
     </div>
  <div class="mb-3">
@@ -73,7 +73,7 @@ include("../../templates/header.php");?>
             name="password"
             id="password"
             aria-describedby="helpId"
-            placeholder="Password:"
+            placeholder="Password"
         />
     
     <button type="submit" class="btn btn-success">Agregar</button>
