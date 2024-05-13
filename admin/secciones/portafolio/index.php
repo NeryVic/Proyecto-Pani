@@ -2,7 +2,7 @@
 include("../../bd.php");
 
 if(isset($_GET['txtID'])){
-    // Borrar registros, nery puto
+    // Borrar registros
     $txtID=(isset ($_GET['txtID']) )? $_GET['txtID']:"";
     
     // Obtener nombre de la imagen para eliminarla
@@ -59,7 +59,7 @@ include("../../templates/header.php");
                         <img width="50" height="50" src="../../../assets/img/portfolio/<?php echo $registro['imagen']; ?>" alt="Imagen del portafolio">
                         </td>
                         <td><?php echo $registro['descripcion']; ?></td>
-                        <td>
+                        <td scope="col" >
                             <a href="editar.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-info" role="button">Editar</a>
                             <a href="index.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-danger" role="button">Eliminar</a>
                         </td>

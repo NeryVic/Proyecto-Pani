@@ -1,7 +1,7 @@
 <?php 
 include("../../bd.php");
 if(isset($_GET['txtID'])){
-//Borrar registros
+//Recepcionar registros
 $txtID=(isset ($_GET['txtID']) )? $_GET['txtID']:"";
 $sentencia = $conexion->prepare("SELECT icono FROM tbl_servicios WHERE ID=:ID");
 $sentencia->bindParam(":ID", $txtID);
@@ -14,7 +14,7 @@ if(isset($registro_imagen["icono"])){
     }
 }
 
-
+//Borrar registros
 $sentencia = $conexion->prepare("DELETE FROM tbl_servicios WHERE ID=:ID");
 $sentencia->bindParam(":ID", $txtID);
 $sentencia->execute();
