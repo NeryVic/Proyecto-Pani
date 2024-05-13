@@ -3,10 +3,19 @@ include("../../bd.php");
 
 // Borrar registros
 if (isset($_GET['txtID'])) {
-    $txtID = isset($_GET['txtID']) ? $_GET['txtID'] : "";
-    $sentencia = $conexion->prepare("DELETE FROM tbl_usuarios WHERE ID = :ID");
-    $sentencia->bindParam(":ID", $txtID);
-    $sentencia->execute();
+    $txtID = $_GET['txtID'];
+    if (isset($_GET['confirm']) && $_GET['confirm'] === 'yes') {
+        $sentencia = $conexion->prepare("DELETE FROM tbl_usuarios WHERE ID = :ID");
+        $sentencia->bindParam(":ID", $txtID);
+        $sentencia->execute();
+        echo "<script>alert('Registro eliminado con éxito.');</script>";
+    } else {
+        echo "<script>
+            if (confirm('¿Estás seguro de que deseas eliminar este registro?')) {
+                window.location.href = 'index.php?txtID=$txtID&confirm=yes';
+            }
+        </script>";
+    }
 }
 
 
