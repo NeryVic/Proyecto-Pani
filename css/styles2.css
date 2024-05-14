@@ -1024,7 +1024,7 @@ textarea.form-control {
 
 .text-muted {
   --bs-text-opacity: 1;
-  color: #6c757d !important;
+  color: #d3d9df !important;
 }
 
 .bg-light {
