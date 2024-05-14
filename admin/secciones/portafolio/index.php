@@ -9,7 +9,7 @@ if(isset($_GET['txtID'])){
     $sentencia = $conexion->prepare("SELECT imagen FROM tbl_portafolio WHERE ID=:ID");
     $sentencia->bindParam(":ID", $txtID);
     $sentencia->execute();
-    $registro_imagen=$sentencia->fetch(PDO::FETCH_LAZY);
+    $registro_imagen  =  $sentencia->fetch(PDO::FETCH_LAZY);
     
     // Verificar si la imagen existe y eliminarla
     if(isset($registro_imagen["imagen"])){
