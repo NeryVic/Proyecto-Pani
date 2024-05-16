@@ -1,8 +1,18 @@
 <?php 
-$url_base= "http://localhost/Proyecto-Pani/admin/"
+session_start();
+$url_base= "http://localhost/Proyecto-Pani/admin/";
+// Verificar si el usuario ha iniciado sesión
+if(!isset($_SESSION['usuario'])){
+    header("Location:".$url_base."login.php");
+    exit();
+
+
+
+
+
+
+}
 ?>
-
-
 <!doctype html>
 <html lang="en">
     <head>
@@ -37,7 +47,7 @@ $url_base= "http://localhost/Proyecto-Pani/admin/"
                     <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/equipo/">Equipo</a>
                     <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/configuraciones/">Configuraciones</a>
                     <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/usuarios/">Usuarios</a>
-                    <a class="nav-item nav-link" href="<?php echo $url_base;?>login.php">Cerrar sesion</a>
+                    <a class="nav-item nav-link" href="<?php echo $url_base;?>cerrar.php">Cerrar sesion</a>
                 </div>
             </nav>
             

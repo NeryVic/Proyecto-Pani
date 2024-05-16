@@ -1,17 +1,34 @@
 <?php 
-include("./bd.php");
-
+session_start();
 if($_POST){
-    print_r($_POST);
-
+include("./bd.php");    
+print_r($_POST);
+    $usuario = (isset($_POST['usuario'])) ? $_POST['usuario'] : "";
+    $password = (isset($_POST['password'])) ? $_POST['password'] : "";
 
 
 
     // Seleccionar registros
-    $sentencia = $conexion->prepare("SELECT * FROM tbl_usuarios");
+    $sentencia = $conexion->prepare("SELECT *, count(*) as n_usuario 
+    FROM tbl_usuarios
+    WHERE usuario=:usuario
+    AND password=:password
+    ");
+    $sentencia->bindParam(":usuario", $usuario);
+    $sentencia->bindParam(":password", $password);
     $sentencia->execute();
-    $lista_usuarios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
+
+    $lista_usuarios = $sentencia->fetch(PDO::FETCH_LAZY);
+
+    if($lista_usuarios['n_usuario']>0){
+        print_r("Usuario y password encontrados");
+        $_SESSION['usuario']=$lista_usuarios['usuario'];
+        $_SESSION['logueado']=true;
+        header("Location:index.php");
+    }else{
+        print_r("Usuario o password no encontrado");
+    }
 
 
 
