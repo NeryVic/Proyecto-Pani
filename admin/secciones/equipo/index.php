@@ -1,10 +1,28 @@
 <?php 
 include("../../bd.php");
 
-
-
-
-
+if(isset($_GET['txtID'])){
+    // Borrar registros
+    $txtID=(isset ($_GET['txtID']) )? $_GET['txtID']:"";
+    
+    // Obtener nombre de la imagen para eliminarla
+    $sentencia = $conexion->prepare("SELECT imagen FROM tbl_equipo WHERE ID=:ID");
+    $sentencia->bindParam(":ID", $txtID);
+    $sentencia->execute();
+    $nombre_archivo_imagen2  =  $sentencia->fetch(PDO::FETCH_LAZY);
+    
+    // Verificar si la imagen existe y eliminarla
+    if(isset($nombre_archivo_imagen2["imagen"])){
+       // $ruta_imagen = "../../../assets/img/team/".$registro_imagen["imagen"];
+        if(file_exists("../../../assets/img/team/".$nombre_archivo_imagen2["imagen"])){
+            unlink("../../../assets/img/team/".$nombre_archivo_imagen2["imagen"]);
+        }
+    }
+    // Eliminar el registro de la base de datos 
+    $sentencia = $conexion->prepare("DELETE FROM tbl_equipo WHERE `tbl_equipo`.`ID`=:ID");
+    $sentencia->bindParam(":ID", $txtID);
+    $sentencia->execute();
+}
 
 
 //Seleccionar registros
@@ -37,24 +55,26 @@ include("../../templates/header.php");?>
                     <th scope="col">imagen</th>
                     <th scope="col">nombrecompleto</th>
                     <th scope="col">puesto</th>
-                    <th scope="col">twitter</th>
-                    <th scope="col">facebook</th>
-                    <th scope="col">linkedin</th>
+                    <th scope="col">Redes sociales</th>
                     <th scope="col">Acciones</th>
                 </tr>
             </thead>
             <tbody>
-            <?php foreach($lista_equipo as $registros){ ?>    
+            <?php foreach($lista_equipo as $registro){ ?>    
             <tr class="">
-                    <td>1</td>
-                    <td>imagen.jpg</td>
-                    <td>juan carlos paniagua</td>
-                    <td>CEO</td>
-                    <td>@MADERASPANI/X</td>
-                    <td>MADERASPANI/FB</td>
-                    <td>MADERASPANI.S.R.L</td>
-                    <td><a href="editar.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-info" role="button">Editar</a>
-                        <a href="index.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-danger" role="button">Eliminar</a></td>
+                    <td><?php echo $registro['ID']; ?></td>
+                    <td><img width="50" height="50" src="../../../assets/img/team/<?php echo $registro['imagen']; ?>" alt="Imagen del team"></td>
+                    <td><?php echo $registro['nombrecompleto'];?></td>
+                    <td><?php echo $registro['puesto']; ?></td>
+                    <td>
+                    <?php echo $registro['twitter']; ?>
+                    <br><?php echo $registro['facebook']; ?></br>
+                    <?php echo $registro['linkedin']; ?>
+                    </td>
+                    <td>
+                        <a href="editar.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-info" role="button">Editar</a>
+                        <a href="index.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-danger" role="button">Eliminar</a>
+                    </td>
                 </tr>
                 <?php } ?>
             </tbody>

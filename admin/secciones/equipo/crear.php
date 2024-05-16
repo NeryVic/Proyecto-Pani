@@ -13,7 +13,11 @@ if ($_POST){
     $tmp_imagen = $_FILES["imagen"]["tmp_name"]; 
     if($tmp_imagen != "") {
     move_uploaded_file($tmp_imagen, "../../../assets/img/team/".$nombre_archivo_imagen2); 
-    }
+    
+
+
+
+}
 
     $sentencia = $conexion->prepare("INSERT INTO tbl_equipo (imagen, nombrecompleto, puesto, twitter, facebook, linkedin) 
     VALUES (:imagen, :nombrecompleto, :puesto, :twitter, :facebook, :linkedin)");

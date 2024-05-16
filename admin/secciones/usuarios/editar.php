@@ -1,6 +1,5 @@
 <?php
 include("../../bd.php");
-
 // Verificar si se ha proporcionado un ID en la URL
 if(isset($_GET['txtID'])){
     //Recuperar los datos del ID correspondiente (seleccionado)
@@ -15,10 +14,31 @@ if(isset($_GET['txtID'])){
     $correo = $registro['correo']; 
     $password = $registro['password'];
 
-
-
 }
+if ($_POST){
+    
+    $txtID = (isset($_POST['ID'])) ? $_POST['ID'] : "";
+    $usuario = (isset($_POST['usuario'])) ? $_POST['usuario'] : "";
+    $correo = (isset($_POST['correo'])) ? $_POST['correo'] : "";
+    $password = (isset($_POST['password'])) ? $_POST['password'] : "";
+    
 
+
+    
+    
+    $sentencia = $conexion->prepare("UPDATE tbl_usuarios 
+    SET usuario=:usuario, correo=:correo,password=:password WHERE ID=:ID ");
+    $sentencia->bindParam(":usuario", $usuario);
+    $sentencia->bindParam(":correo", $correo);
+    $sentencia->bindParam(":password", $password);
+    $sentencia->bindParam(":ID", $txtID);
+    
+
+    $sentencia->execute();
+
+    $mensaje="Registro agregado con éxito,";
+    header("Location:index.php?mensaje=".$mensaje);
+}
 
 
 
@@ -95,7 +115,7 @@ include("../../templates/header.php");
             type="submit"
             class="btn btn-success"
         >
-            Agregar
+            Actualizar
         </button>
         
         <a
