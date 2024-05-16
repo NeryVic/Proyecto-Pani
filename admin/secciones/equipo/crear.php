@@ -15,16 +15,15 @@ if ($_POST){
     move_uploaded_file($tmp_imagen, "../../../assets/img/team/".$nombre_archivo_imagen2); 
     }
 
-    $sentencia = $conexion->prepare("INSERT INTO tbl_equipo (imagen, nombrecompleto, puesto, twitter, facebook, linkedin) 
-    VALUES (:imagen, :nombrecompleto, :puesto, :twitter, :facebook, :linkedin)");
-    
+    $sentencia=$conexion->prepare("INSERT INTO tbl_equipo 'ID', 'imagen', 'nombrecompleto', 'puesto', 'twitter', 'facebook', 'linkedin')
+    VALUES (NULL,:imagen, :nombrecompleto, :puesto, :twitter, :facebook, :linkedin);");
 
-    $sentencia->bindParam(":imagen", $nombre_archivo_imagen2);
-    $sentencia->bindParam(":nombrecompleto", $nombrecompleto);
-    $sentencia->bindParam(":puesto", $puesto);
-    $sentencia->bindParam(":twitter", $twitter);
-    $sentencia->bindParam(":facebook", $facebook);
-    $sentencia->bindParam(":linkedin", $linkedin);
+    $sentencia->bindParam(":imagen",$nombre_archivo_imagen2);
+    $sentencia->bindParam(":nombrecompleto",$nombrecompleto);
+    $sentencia->bindParam(":puesto",$puesto);
+    $sentencia->bindParam(":twitter",$twitter);
+    $sentencia->bindParam(":facebook",$facebook);
+    $sentencia->bindParam(":linkedin",$linkedin);
 
     $sentencia->execute();
 
