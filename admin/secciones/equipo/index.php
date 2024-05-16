@@ -10,14 +10,7 @@ include("../../bd.php");
 //Seleccionar registros
 $sentencia = $conexion->prepare("SELECT * FROM `tbl_equipo`");
 $sentencia-> execute();
-$lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
-
-
-
-
-
-
-
+$lista_equipo=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 
 
 
@@ -51,7 +44,8 @@ include("../../templates/header.php");?>
                 </tr>
             </thead>
             <tbody>
-                <tr class="">
+            <?php foreach($lista_equipo as $registros){ ?>    
+            <tr class="">
                     <td>1</td>
                     <td>imagen.jpg</td>
                     <td>juan carlos paniagua</td>
@@ -62,7 +56,7 @@ include("../../templates/header.php");?>
                     <td><a href="editar.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-info" role="button">Editar</a>
                         <a href="index.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-danger" role="button">Eliminar</a></td>
                 </tr>
-
+                <?php } ?>
             </tbody>
         </table>
     </div>

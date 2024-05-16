@@ -14,8 +14,8 @@ if ($_POST){
     if($tmp_imagen!="") {
     move_uploaded_file($tmp_imagen, "../../../assets/img/team/".$nombre_archivo_imagen2);
     }
-
-    $sentencia=$conexion->prepare("INSERT INTO tbl_equipo 'ID', 'imagen', 'nombrecompleto', 'puesto', 'twitter', 'facebook', 'linkedin')
+    
+    $sentencia=$conexion->prepare("INSERT INTO `tbl_equipo` ('ID', 'imagen', 'nombrecompleto', 'puesto', 'twitter', 'facebook', 'linkedin')
     VALUES (NULL,:imagen, :nombrecompleto, :puesto, :twitter, :facebook, :linkedin);");
 
     $sentencia->bindParam(":imagen",$nombre_archivo_imagen2);
