@@ -1,5 +1,26 @@
 <?php 
 include("./bd.php");
+
+if($_POST){
+    print_r($_POST);
+
+
+
+
+    // Seleccionar registros
+    $sentencia = $conexion->prepare("SELECT * FROM tbl_usuarios");
+    $sentencia->execute();
+    $lista_usuarios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+
+
+
+}
+
+
+
 ?>
 
 <!doctype html>
@@ -52,9 +73,9 @@ include("./bd.php");
                                         type="text"
                                         class="form-control"
                                         name="usuario"
-                                        id=""
+                                        id="usuario"
                                         aria-describedby="helpId"
-                                        placeholder=""
+                                        placeholder="Usuario"
                                     />
 
                                 </div>
@@ -63,25 +84,23 @@ include("./bd.php");
                                     <input
                                         type="password"
                                         class="form-control"
-                                        name="contrasenia"
-                                        id=""
+                                        name="password"
+                                        id="password"
                                         aria-describedby="helpId"
-                                        placeholder=""
+                                        placeholder="Contraseña"
                                     />
                                     
                                 </div>
                                 
 
 
-                                <a
-                                    name=""
-                                    id=""
-                                    class="btn btn-primary"
-                                    href="index.php"
-                                    role="button"
-                                    >Entrar</a
-                                >
-                                
+                            <input
+                                name=""
+                                id=""
+                                class="btn btn-primary"
+                                type="submit"
+                                value="Entrar"
+                            />
 
 
                                 </form>

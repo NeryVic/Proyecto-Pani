@@ -1,9 +1,25 @@
 <?php 
 include("../../bd.php");
+
+
+
+
+
+
+
 //Seleccionar registros
 $sentencia = $conexion->prepare("SELECT * FROM `tbl_equipo`");
 $sentencia-> execute();
 $lista_servicios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+
+
+
+
+
+
 
 include("../../templates/header.php");?>
 
@@ -21,7 +37,7 @@ include("../../templates/header.php");?>
     >
         <table
             class="table"
-        >       
+        >
             <thead>
                 <tr>
                     <th scope="col">ID</th>
@@ -36,15 +52,17 @@ include("../../templates/header.php");?>
             </thead>
             <tbody>
                 <tr class="">
-                    <td scope="row">1</td>
+                    <td>1</td>
                     <td>imagen.jpg</td>
                     <td>juan carlos paniagua</td>
                     <td>CEO</td>
                     <td>@MADERASPANI/X</td>
                     <td>MADERASPANI/FB</td>
                     <td>MADERASPANI.S.R.L</td>
-                    <td>editar | eliminar</td>
+                    <td><a href="editar.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-info" role="button">Editar</a>
+                        <a href="index.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-danger" role="button">Eliminar</a></td>
                 </tr>
+
             </tbody>
         </table>
     </div>
@@ -52,9 +70,8 @@ include("../../templates/header.php");?>
 
 
     </div>
-
+    <div class="card-footer text-muted"></div>
 </div>
-
 
 
 
