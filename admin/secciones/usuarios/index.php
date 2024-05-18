@@ -63,15 +63,10 @@ include("../../templates/header.php");
                     <input type="password" id="pw" value="<?php echo $registro['password']; ?>" readonly>
                     <span style="cursor: pointer;" onclick="mostrarOjito()">👁️</span>
                     </td>
-                    
                     <td scope="col">
                         <a href="editar.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-info" role="button">Editar</a>
                         <a href="index.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-danger" role="button">Eliminar</a>                        
                     </td>
-
-
-
-
                 </tr>
                 <?php } ?>
             </tbody>

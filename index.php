@@ -42,6 +42,8 @@ $lista_portfolio=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         
+
+        
     </head>
     <body id="page-top">
         
