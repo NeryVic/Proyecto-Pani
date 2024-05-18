@@ -46,16 +46,17 @@ include("../../templates/header.php");
                 <tr class="">
                     <td scope="row"><?php echo $registro['usuario']; ?></td>
                     <td><?php echo $registro['correo']; ?></td>
-                    <td><?php echo str_repeat("*", strlen($registro['password'])); ?></td>
+                    <td>
+    <span id="password_<?php echo $registro['ID']; ?>">
+        <?php echo str_repeat("*", strlen($registro['password'])); ?>
+    </span>
+</td>
+
                     <td scope="col">
                         <a href="editar.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-info" role="button">Editar</a>
                         <a href="index.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-danger" role="button">Eliminar</a>
                         
                     </td>
-
-
-
-
                 </tr>
                 <?php } ?>
             </tbody>

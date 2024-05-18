@@ -2,7 +2,6 @@
 session_start();
 if($_POST){
 include("./bd.php");    
-print_r($_POST);
     $usuario = (isset($_POST['usuario'])) ? $_POST['usuario'] : "";
     $password = (isset($_POST['password'])) ? $_POST['password'] : "";
 
@@ -22,12 +21,11 @@ print_r($_POST);
     $lista_usuarios = $sentencia->fetch(PDO::FETCH_LAZY);
 
     if($lista_usuarios['n_usuario']>0){
-        print_r("Usuario y password encontrados");
         $_SESSION['usuario']=$lista_usuarios['usuario'];
         $_SESSION['logueado']=true;
         header("Location:index.php");
     }else{
-        print_r("Usuario o password no encontrado");
+        $mensaje="Error: Usuario o Contraseña incorrectos.";
     }
 
 
@@ -75,12 +73,40 @@ print_r($_POST);
                     <div
                         class="col-4"
                     >
-                        
-
+                    <br/><br/><br/><br/><br/>
+                    <?php
+                    if(isset($mensaje)){?>
+                    
+                    <div
+                                class="alert alert-danger alert-dismissible fade show"
+                                role="alert"
+                            >
+                                <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="alert"
+                                    aria-label="Close"
+                                ></button>
+                                <strong><?php echo $mensaje?></strong>
+                            </div>
+                        <?php };
+                        ?>
                         <div class="card">
-                            <div class="card-header">Login</div>
+                            <div class="card-header">
+                                Login
+                            </div>
                             <div class="card-body">
                                 
+
+                          
+                            
+                            <script>
+                                var alertList = document.querySelectorAll(".alert");
+                                alertList.forEach(function (alert) {
+                                    new bootstrap.Alert(alert);
+                                });
+                            </script>
+                            
 
                                 <form action="" method="post">
 
