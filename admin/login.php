@@ -92,7 +92,7 @@ include("./bd.php");
                     <div
                         class="col-4"
                     >
-                    <br/><br/><br/><br/><br/>
+                    
                     <?php
                     if(isset($mensaje)){?>
                     
