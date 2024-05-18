@@ -2,7 +2,7 @@
 session_start();
 if($_POST){
 include("./bd.php");    
-print_r($_POST);
+//print_r($_POST);
     $usuario = (isset($_POST['usuario'])) ? $_POST['usuario'] : "";
     $password = (isset($_POST['password'])) ? $_POST['password'] : "";
 
@@ -22,12 +22,14 @@ print_r($_POST);
     $lista_usuarios = $sentencia->fetch(PDO::FETCH_LAZY);
 
     if($lista_usuarios['n_usuario']>0){
-        print_r("Usuario y password encontrados");
+        echo "<script src='../assets/plugins/Sweetalert/dist/sweetalert2.all.min.js'></script>";
+        echo "<script>Swal.fire('¡Login correcto!', '', 'success');</script>";
         $_SESSION['usuario']=$lista_usuarios['usuario'];
         $_SESSION['logueado']=true;
         header("Location:index.php");
     }else{
-        print_r("Usuario o password no encontrado");
+        echo "<script src='../assets/plugins/Sweetalert/dist/sweetalert2.all.min.js'></script>";
+        echo "<script>Swal.fire('¡Login incorrecto!', '', 'error');</script>";
     }
 
 
@@ -50,15 +52,18 @@ print_r($_POST);
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        <!-- sweetalert2
+        <link rel="stylesheet" href="../assets/plugins/Sweetalert/dist/sweetalert2.min.css">
+        <script src="../assets/plugins/Sweetalert/dist/sweetalert2.all.min.js"></script>
+        -->
 
         <!-- Bootstrap CSS v5.2.1 -->
         <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-            crossorigin="anonymous"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"  
         />
+        
     </head>
+    
 
     <body>
         <header>
@@ -85,7 +90,7 @@ print_r($_POST);
                                 <form action="" method="post">
 
                                 <div class="mb-3">
-                                    <label for="" class="form-label">Usuario</label>
+                                    <label for="usuario" class="form-label">Usuario</label>
                                     <input
                                         type="text"
                                         class="form-control"
@@ -97,7 +102,7 @@ print_r($_POST);
 
                                 </div>
                                 <div class="mb-3">
-                                    <label for="" class="form-label">Contraseña</label>
+                                    <label for="contrasenia" class="form-label">Contraseña</label>
                                     <input
                                         type="password"
                                         class="form-control"
@@ -106,10 +111,9 @@ print_r($_POST);
                                         aria-describedby="helpId"
                                         placeholder="Contraseña"
                                     />
-                                    
+                     
                                 </div>
                                 
-
 
                             <input
                                 name=""
@@ -126,7 +130,6 @@ print_r($_POST);
                             <div class="card-footer text-muted"></div>
                         </div>
                         
-
 
                     </div>
                     
@@ -149,5 +152,6 @@ print_r($_POST);
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"
         ></script>
+        
     </body>
 </html>
