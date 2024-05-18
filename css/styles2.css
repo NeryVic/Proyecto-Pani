@@ -454,6 +454,11 @@ textarea.form-control {
   min-height: calc(1.5em + 0.75rem + 2px);
 }
 
+.bx {
+  font-size: 30px;
+  background-color: #0d6efd;
+}
+
 .invalid-feedback {
   display: none;
   width: 100%;
