@@ -105,7 +105,7 @@ include("./bd.php");
                             <div class="card-body">
                                 
 
-                          
+
                             
                             <script>
                                 var alertList = document.querySelectorAll(".alert");

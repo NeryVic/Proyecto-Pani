@@ -7,7 +7,6 @@ include("../../templates/header.php");?>
     <div class="card-header">Entradas</div>
     <div class="card-body">
     <a href="crear.php" class="btn btn-primary" role="button">Agregar registro</a>
-   
     <div
     class="table-responsive-sm"
 >
@@ -31,7 +30,10 @@ include("../../templates/header.php");?>
                 <td>Título</td>
                 <td>Descripción</td>
                 <td>Imagen</td>
-                <td>Acciones Editar | Eliminar</td>
+                <td>
+                <a href="editar.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-info" role="button">Editar</a>
+                <a href="index.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-danger" role="button">Eliminar</a>
+                </td>
 </tr>
         </tbody>
     </table>
