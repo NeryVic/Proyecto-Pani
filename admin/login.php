@@ -22,23 +22,20 @@ include("./bd.php");
     $lista_usuarios = $sentencia->fetch(PDO::FETCH_LAZY);
 
     if($lista_usuarios['n_usuario']>0){
-        echo "<script src='../assets/plugins/Sweetalert/dist/sweetalert2.all.min.js'></script>";
-        echo "<script>Swal.fire('¡Login correcto!', '', 'success');</script>";
+        //echo "Login correcto";
         $_SESSION['usuario']=$lista_usuarios['usuario'];
         $_SESSION['logueado']=true;
         header("Location:index.php");
     }else{
         echo "<script src='../assets/plugins/Sweetalert/dist/sweetalert2.all.min.js'></script>";
-        echo "<script>Swal.fire('¡Login incorrecto!', '', 'error');</script>";
+        echo "<script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire('¡Usuario o contraseña incorrecto!', '', 'error');
+                });
+              </script>";
     }
 
-
-
-
-
 }
-
-
 
 ?>
 
@@ -61,16 +58,31 @@ include("./bd.php");
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"  
         />
-        
+        <style>
+            body {
+               
+            }
+            .containerr {
+                padding-top: 30vh;
+                background-image: url(../assets/img/header-bg.jpg);
+                background-size: cover; /* Para ajustar la imagen al tamaño del fondo */
+                background-repeat: no-repeat; /* Para evitar que se repita la imagen */
+                height: 100vh;
+                width: 100%;
+            }
+
+
+        </style>
     </head>
     
 
     <body>
         <header>
             <!-- place navbar here -->
+    
         </header>
         <main> 
-            <div class="container">
+            <div class="containerr">
                 <div class="row">
                     <div
                         class="col-4"
