@@ -1,6 +1,7 @@
 <?php 
 include("../../bd.php");
 
+
 // Borrar registros
 if (isset($_GET['txtID'])) {
     $txtID = $_GET['txtID'];
@@ -26,8 +27,20 @@ $lista_usuarios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
 include("../../templates/header.php");
 ?>
+<script>
+    function mostrarOjito() {
+        const pass = document.getElementById('pw');
+    if (pass.type === 'password') {
+        pass.type = 'text';
+    } else {
+        pass.type = 'password';
+    }
+
+    }
+</script>
 
 <div class="card">
+    
 
     <div class="card-header"><a href="crear.php" class="btn btn-primary" role="button">Agregar registro</a></div>
     <div class="card-body">
@@ -46,11 +59,14 @@ include("../../templates/header.php");
                 <tr class="">
                     <td scope="row"><?php echo $registro['usuario']; ?></td>
                     <td><?php echo $registro['correo']; ?></td>
-                    <td><?php echo str_repeat("*", strlen($registro['password'])); ?></td>
+                    <td>
+                    <input type="password" id="pw" value="<?php echo $registro['password']; ?>" readonly>
+                    <span style="cursor: pointer;" onclick="mostrarOjito()">👁️</span>
+                    </td>
+                    
                     <td scope="col">
                         <a href="editar.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-info" role="button">Editar</a>
-                        <a href="index.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-danger" role="button">Eliminar</a>
-                        
+                        <a href="index.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-danger" role="button">Eliminar</a>                        
                     </td>
 
 
@@ -60,6 +76,7 @@ include("../../templates/header.php");
                 <?php } ?>
             </tbody>
         </table>
+        
     </div>
 </div>
 <div class="card-footer text-muted"></div>
