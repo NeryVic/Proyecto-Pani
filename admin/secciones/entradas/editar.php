@@ -1,3 +1,6 @@
-<?php include("../../templates/header.php");?>
-Editar entrada
+<?php 
+include("../../bd.php");
+include("../../templates/header.php");?>
+
+
 <?php include("../../templates/footer.php");?>
