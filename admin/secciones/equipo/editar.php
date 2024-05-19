@@ -71,7 +71,7 @@ include("../../templates/header.php");
         <div class="card-body">
             <div class="mb-3">
                 <label for="imagen" class="form-label">Imagen:</label>
-                <img width="50" height="50" src="../../../assets/img/team/<?php echo htmlspecialchars($imagen); ?>" alt="Imagen actual">
+                <img width="50" height="50" src="../../../assets/img/team/<?php echo htmlspecialchars($imagen_actual); ?>" alt="Imagen actual">
                 <input
                     type="file"
                     class="form-control"

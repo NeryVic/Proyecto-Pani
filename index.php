@@ -10,6 +10,11 @@ $sentencia = $conexion->prepare("SELECT * FROM `tbl_portafolio`");
 $sentencia-> execute();
 $lista_portfolio=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 
+//Seleccionar registros de team
+$sentencia = $conexion->prepare("SELECT * FROM `tbl_equipo`");
+$sentencia-> execute();
+$lista_team=$sentencia->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
@@ -89,7 +94,7 @@ $lista_portfolio=$sentencia->fetchAll(PDO::FETCH_ASSOC);
         <section class="page-section" id="services">
             <!-- bton de wssp-->
             <div class="wssp wssp-container">
-              <a href="https://api.whatsapp.com/send?phone=3704016066" class="wsspss">
+              <a href="https://api.whatsapp.com/send?phone=5493718455334" class="wsspss">
                 <img class="wsspp-img" src="assets/img/wssp.png" alt="Contactar por whatsapp"  width="55" height="55">
               </a>
               </div>
@@ -233,43 +238,26 @@ $lista_portfolio=$sentencia->fetchAll(PDO::FETCH_ASSOC);
         <section class="page-section bg-light" id="team">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading text-uppercase">Nuestro Asombroso Equipo</h2>
+                    <h3 class="section-subheading text-muted">Un grupo dedicado a la excelencia y colaboración.</h3>
                 </div>
                 <div class="row">
+                    <?php foreach($lista_team as $registros){ ?>
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="..." />
-                            <h4>Pani</h4>
-                            <p class="text-muted">Fundador</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Twitter Profile"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                            <img class="mx-auto rounded-circle" src="assets/img/team/<?php echo $registros['imagen'] ?>" alt="..." />
+                            <h4><?php echo $registros['nombrecompleto'] ?></h4>
+                            <p class="text-muted"><?php echo $registros['puesto'] ?></p>
+                            <a class="btn btn-dark btn-social mx-2" href="<?php echo $registros['twitter'] ?>" target="_blank" aria-label="Parveen Anand Twitter Profile"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="<?php echo $registros['facebook'] ?>" target="_blank" aria-label="Parveen Anand Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="<?php echo $registros['linkedin'] ?>" target="_blank" aria-label="Parveen Anand LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/2.jpg" alt="..." />
-                            <h4>Ale Pintos</h4>
-                            <p class="text-muted">Backend Developer</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/3.jpg" alt="..." />
-                            <h4>Nery</h4>
-                            <p class="text-muted">Developer</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
+
+                    <?php } ?>
                 </div>
                 <div class="row">
-                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
+                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Nuestro equipo está compuesto por profesionales apasionados y dedicados a brindar soluciones innovadoras y eficaces. Trabajamos juntos para lograr metas comunes y ofrecer resultados excepcionales a nuestros clientes.</p></div>
                 </div>
             </div>
         </section>
@@ -319,7 +307,7 @@ $lista_portfolio=$sentencia->fetchAll(PDO::FETCH_ASSOC);
         <footer class="footer py-4">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-start">Copyright &copy; MADERAS-PANI 2024</div>
+                    <div class="col-lg-4 text-lg-start">Copyright &copy; MADERAS-PANI <script>document.write(new Date().getFullYear());</script></div>
                     <div class="col-lg-4 my-3 my-lg-0">
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -333,7 +321,6 @@ $lista_portfolio=$sentencia->fetchAll(PDO::FETCH_ASSOC);
             </div>
                                  
         </footer>
-        
  
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
