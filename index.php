@@ -94,7 +94,7 @@ $lista_team=$sentencia->fetchAll(PDO::FETCH_ASSOC);
         <section class="page-section" id="services">
             <!-- bton de wssp-->
             <div class="wssp wssp-container">
-              <a href="https://api.whatsapp.com/send?phone=3704016066" class="wsspss">
+              <a href="https://api.whatsapp.com/send?phone=5493718455334" class="wsspss">
                 <img class="wsspp-img" src="assets/img/wssp.png" alt="Contactar por whatsapp"  width="55" height="55">
               </a>
               </div>
@@ -238,8 +238,8 @@ $lista_team=$sentencia->fetchAll(PDO::FETCH_ASSOC);
         <section class="page-section bg-light" id="team">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading text-uppercase">Nuestro Asombroso Equipo</h2>
+                    <h3 class="section-subheading text-muted">Un grupo dedicado a la excelencia y colaboración.</h3>
                 </div>
                 <div class="row">
                     <?php foreach($lista_team as $registros){ ?>
@@ -257,7 +257,7 @@ $lista_team=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                     <?php } ?>
                 </div>
                 <div class="row">
-                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
+                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Nuestro equipo está compuesto por profesionales apasionados y dedicados a brindar soluciones innovadoras y eficaces. Trabajamos juntos para lograr metas comunes y ofrecer resultados excepcionales a nuestros clientes.</p></div>
                 </div>
             </div>
         </section>
@@ -307,7 +307,7 @@ $lista_team=$sentencia->fetchAll(PDO::FETCH_ASSOC);
         <footer class="footer py-4">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-start">Copyright &copy; MADERAS-PANI 2024</div>
+                    <div class="col-lg-4 text-lg-start">Copyright &copy; MADERAS-PANI <script>document.write(new Date().getFullYear());</script></div>
                     <div class="col-lg-4 my-3 my-lg-0">
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -321,7 +321,6 @@ $lista_team=$sentencia->fetchAll(PDO::FETCH_ASSOC);
             </div>
                                  
         </footer>
-        
  
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
