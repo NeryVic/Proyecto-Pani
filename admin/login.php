@@ -49,15 +49,25 @@ include("./bd.php");
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <!-- sweetalert2
-        <link rel="stylesheet" href="../assets/plugins/Sweetalert/dist/sweetalert2.min.css">
-        <script src="../assets/plugins/Sweetalert/dist/sweetalert2.all.min.js"></script>
-        -->
-
-        <!-- Bootstrap CSS v5.2.1 -->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"  
         />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <script>
+        function mostrarOjito() {
+            const passwordField = document.getElementById("password");
+            const toggleIcon = document.getElementById("togglePassword");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.type = "password";
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            }
+        }
+        </script>
         <style>
           
             .containerr {
@@ -67,6 +77,20 @@ include("./bd.php");
                 background-repeat: no-repeat; /* Para evitar que se repita la imagen */
                 height: 100vh;
                 width: 100%;
+            }
+            .input-container {
+            position: relative;
+            width: max-content;
+            }
+            .input-container input {
+            padding-right: 30px; /* Espacio para el ícono */
+            }
+            .fas {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
             }
 
 
@@ -149,6 +173,7 @@ include("./bd.php");
                                         aria-describedby="helpId"
                                         placeholder="Contraseña"
                                     />
+                                    <i id="togglePassword" class="fas fa-eye" onclick="mostrarOjito()" style="cursor: pointer;"></i><br>
 
                                 </div>
                                 
