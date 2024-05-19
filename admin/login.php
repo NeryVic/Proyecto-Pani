@@ -59,12 +59,12 @@ include("./bd.php");
             const toggleIcon = document.getElementById("togglePassword");
             if (passwordField.type === "password") {
                 passwordField.type = "text";
-                toggleIcon.classList.remove('fa-eye');
-                toggleIcon.classList.add('fa-eye-slash');
-            } else {
-                passwordField.type = "password";
                 toggleIcon.classList.remove('fa-eye-slash');
                 toggleIcon.classList.add('fa-eye');
+            } else {
+                passwordField.type = "password";
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
             }
         }
         </script>
@@ -173,7 +173,7 @@ include("./bd.php");
                                         aria-describedby="helpId"
                                         placeholder="Contraseña"
                                     />
-                                    <i id="togglePassword" class="fas fa-eye" onclick="mostrarOjito()" style="cursor: pointer;"></i><br>
+                                    <i id="togglePassword" class="fas fa-eye-slash" onclick="mostrarOjito()" style="cursor: pointer;"></i><br>
 
                                 </div>
                                 
