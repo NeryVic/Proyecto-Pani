@@ -12,10 +12,10 @@ if(isset($_GET['txtID'])){
     $nombre_archivo_imagen2  =  $sentencia->fetch(PDO::FETCH_LAZY);
     
     // Verificar si la imagen existe y eliminarla
-    if(isset($nombre_archivo_imagen2["imagen"])){
-       // $ruta_imagen = "../../../assets/img/team/".$registro_imagen["imagen"];
-        if(file_exists("../../../assets/img/team/".$nombre_archivo_imagen2["imagen"])){
-            unlink("../../../assets/img/team/".$nombre_archivo_imagen2["imagen"]);
+    if(isset($nombre_archivo_imagen2['imagen'])){
+        $ruta_imagen = "../../../assets/img/team/".$nombre_archivo_imagen2['imagen']; // Corregir la asignación de la ruta de la imagen
+        if(file_exists($ruta_imagen)){
+            unlink($ruta_imagen);
         }
     }
     // Eliminar el registro de la base de datos 

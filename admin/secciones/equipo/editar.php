@@ -11,8 +11,7 @@ if(isset($_GET['txtID'])){
     $registro = $sentencia->fetch(PDO::FETCH_ASSOC);
 
     // Asignar los valores del registro a las variables
-    $id = $registro['ID'];
-    $imagen = $registro['imagen']; 
+    $imagen_actual = $registro['imagen']; 
     $nombrecompleto = $registro['nombrecompleto'];
     $puesto = $registro['puesto'];
     $twitter = $registro['twitter'];
@@ -23,19 +22,28 @@ if(isset($_GET['txtID'])){
 // Procesar el formulario cuando se envía
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Recuperar los datos del formulario
-    $id = $_POST['ID'];
+    $txtID = $_POST['ID'];
     $nombrecompleto = $_POST['nombrecompleto'];
     $puesto = $_POST['puesto'];
     $twitter = $_POST['twitter'];
     $facebook = $_POST['facebook'];
     $linkedin = $_POST['linkedin'];
+    $nombre_archivo_imagen = $imagen_actual;
 
     // Verificar si se ha subido una nueva imagen
-    if(isset($_FILES["imagen"]["name"]) && !empty($_FILES["imagen"]["name"])){
+    if(isset($_FILES["imagen"]) && $_FILES["imagen"]["error"] == 0){
         $imagen = $_FILES["imagen"]["name"];
+        $fecha_imagen = new DateTime();
+        $nombre_archivo_imagen = $fecha_imagen->getTimestamp()."_".$imagen;
         $tmp_imagen = $_FILES["imagen"]["tmp_name"];
-        $nombre_archivo_imagen = date("YmdHis") . "_" . $imagen;
-        move_uploaded_file($tmp_imagen, "../../../assets/img/team/" . $nombre_archivo_imagen);
+
+        // Mover la nueva imagen al servidor
+        move_uploaded_file($tmp_imagen, "../../../assets/img/team/".$nombre_archivo_imagen);
+
+        // Eliminar imagen anterior si existe y es diferente de la nueva
+        if($imagen_actual && $imagen_actual != $nombre_archivo_imagen && file_exists("../../../assets/img/team/".$imagen_actual)){
+            unlink("../../../assets/img/team/".$imagen_actual);
+        }
     }
 
     // Actualizar los datos en la base de datos
@@ -46,7 +54,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $sentencia->bindParam(":twitter", $twitter);
     $sentencia->bindParam(":facebook", $facebook);
     $sentencia->bindParam(":linkedin", $linkedin);
-    $sentencia->bindParam(":ID", $id);
+    $sentencia->bindParam(":ID", $txtID);
     $sentencia->execute();
 
     // Redirigir después de la actualización
@@ -138,7 +146,7 @@ include("../../templates/header.php");
                     </div>
                 </div>
                 
-                <input type="hidden" name="ID" value="<?php echo htmlspecialchars($id); ?>">
+                <input type="hidden" name="ID" value="<?php echo htmlspecialchars($txtID); ?>">
                 
                 <button type="submit" class="btn btn-success">Actualizar</button>
                 <a href="index.php" class="btn btn-primary">Cancelar</a>
