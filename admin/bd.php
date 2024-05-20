@@ -1,8 +1,13 @@
 <?php
+//$servidor= "localhost";
+//$BaseDeDatos= "maderas-pani";
+//$usuario= "root";
+//$contrasenia="";
+
 $servidor= "localhost";
-$BaseDeDatos= "maderas-pani";
-$usuario= "root";
-$contrasenia="";
+$BaseDeDatos= "u704677074_maderaspani";
+$usuario= "u704677074_PANI";
+$contrasenia="eVf5:>2;M";
 
 try{
 

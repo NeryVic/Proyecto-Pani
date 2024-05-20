@@ -28,7 +28,7 @@ $lista_team=$sentencia->fetchAll(PDO::FETCH_ASSOC);
         
         <title>MADERAS-PANI</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="assets/img/logo1.png" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
