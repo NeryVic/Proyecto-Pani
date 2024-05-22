@@ -125,8 +125,7 @@ $lista_team=$sentencia->fetchAll(PDO::FETCH_ASSOC);
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Nuestro trabajo</h2>
-                    <h3 class="section-subheading text-muted">Maderas PANI: es una pequeña y dinámica empresa dedicada a la intermediación en la venta de maderas a nivel nacional. Nos especializamos en conectar a proveedores de madera con clientes en todo el país, facilitando transacciones eficientes y satisfaciendo las necesidades de ambas partes.</h3>
-                </div>
+                    <h3 class="section-subheading text-muted"><b>MADERAS PANI</b>: es una pequeña y dinámica empresa dedicada a  la venta de maderas a nivel nacional. Nos especializamos en conectar a proveedores de madera con clientes en todo el país, facilitando transacciones eficientes y satisfaciendo las necesidades de ambas partes.</h3>
                 <div class="row">
                 <?php foreach($lista_portfolio as $registro){ ?>
                     <div class="col-lg-4 col-sm-6 mb-4">
