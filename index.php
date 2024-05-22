@@ -26,7 +26,8 @@ $lista_team=$sentencia->fetchAll(PDO::FETCH_ASSOC);
         <meta name="description" content="" />
         <meta name="author" content="" />
         
-        <title>MADERAS-PANI</title>
+        <title>Maderas-Pani | Venta de Equipos de Palmas de Madera de Alta Calidad</title>
+        <meta name="description" content="Descubre equipos de madera de alta calidad en Maderas-Pani. Ofrecemos una amplia variedad de tamaños perfectos para uso profesional y personal, garantizando durabilidad y rendimiento superior. ¡Encuentra el equipo ideal para tus necesidades hoy mismo!">
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/img/logo1.png" />
         <!-- Font Awesome icons (free version)-->
@@ -102,7 +103,7 @@ $lista_team=$sentencia->fetchAll(PDO::FETCH_ASSOC);
             <div class="container">
                  
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">productos destacados</h2>
+                    <h2 class="section-heading text-uppercase">maderas destacadas</h2>
                     <h3 class="section-subheading text-muted"></h3>
                 </div>
 
@@ -124,7 +125,7 @@ $lista_team=$sentencia->fetchAll(PDO::FETCH_ASSOC);
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Nuestro trabajo</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">Maderas PANI: es una pequeña y dinámica empresa dedicada a la intermediación en la venta de maderas a nivel nacional. Nos especializamos en conectar a proveedores de madera con clientes en todo el país, facilitando transacciones eficientes y satisfaciendo las necesidades de ambas partes.</h3>
                 </div>
                 <div class="row">
                 <?php foreach($lista_portfolio as $registro){ ?>
@@ -156,7 +157,7 @@ $lista_team=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                                     <h2 class="text-uppercase"><?php echo $registro['titulo']; ?></h2>
                                     <p class="item-intro text-muted"><?php echo $registro['subtitulo']; ?></p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/<?php echo $registro['imagen']; ?>" alt="..." />
-                                    <p><?php echo $registro['descripcion']; ?></p>
+                                    <p style="font-size: 14px;"><?php echo $registro['descripcion']; ?></p>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-xmark me-1"></i>
                                         Cerrar
