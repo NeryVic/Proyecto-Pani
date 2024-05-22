@@ -1,0 +1,3 @@
+$contraseña = eVf5:>2;M
+$BaseDeDatos = u704677074_maderaspani
+$User = u704677074_PANI
