@@ -205,7 +205,7 @@ $lista_team=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>2012</h4>
-                                <h4 class="subheading">Ampliacion</h4>
+                                <h4 class="subheading">Ampliación</h4>
                             </div>
                             <div class="timeline-body"><p class="text-muted">El crecimiento continuó de manera sostenida, y en 2012, la empresa amplió su catálogo para incluir postes de quebracho colorado, medios postes y rodrigones. Esta diversificación permitió atender una gama más amplia de proyectos y necesidades, desde cercados agrícolas hasta construcciones rurales. Cada nuevo producto añadido representaba un paso más en la consolidación de la empresa como líder en el mercado maderero local.</p></div>
                         </div>
