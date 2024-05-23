@@ -125,7 +125,7 @@ $lista_team=$sentencia->fetchAll(PDO::FETCH_ASSOC);
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Nuestro trabajo</h2>
-                    <h3 class="section-subheading text-muted"><b>MADERAS PANI</b>: es una pequeña y dinámica empresa dedicada a  la venta de maderas a nivel nacional. Nos especializamos en conectar a proveedores de madera con clientes en todo el país, facilitando transacciones eficientes y satisfaciendo las necesidades de ambas partes.</h3>
+                    <h3 class="section-subheading text-muted"><b>Somos una empresa líder en la zona, dedicada a la comercialización de palmas coloradas, postes de quebracho colorado, postes, medio postes y rodrigones para viñedos. Estamos en General Manuel Belgrano, interior de Formosa. Nos destacamos por ser responsables y  brindar   calidad y los mejores precios.</b></h3>
                 <div class="row">
                 <?php foreach($lista_portfolio as $registro){ ?>
                     <div class="col-lg-4 col-sm-6 mb-4">
@@ -184,10 +184,10 @@ $lista_team=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                         <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>2009-2011</h4>
-                                <h4 class="subheading">Our Humble Beginnings</h4>
+                                <h4>2008</h4>
+                                <h4 class="subheading">Inicios</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted">La empresa nació en los últimos meses de 2008 como un emprendimiento visionario de su fundador, Pani. Desde el principio, Pani supo que lanzar una empresa no sería tarea fácil. Con determinación y mucho esfuerzo, comenzó a vender varillas para viñedos, atendiendo la demanda local de los viticultores que necesitaban soportes de calidad para sus plantas. Los primeros meses estuvieron llenos de sacrificios, pero también de pequeñas recompensas que mantenían viva la esperanza de un futuro próspero.</p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
