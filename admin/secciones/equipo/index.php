@@ -52,9 +52,9 @@ include("../../templates/header.php");?>
             <thead>
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">imagen</th>
-                    <th scope="col">nombrecompleto</th>
-                    <th scope="col">puesto</th>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">Nombre completo</th>
+                    <th scope="col">Puesto</th>
                     <th scope="col">Redes sociales</th>
                     <th scope="col">Acciones</th>
                 </tr>
