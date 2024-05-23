@@ -26,7 +26,7 @@ $lista_team=$sentencia->fetchAll(PDO::FETCH_ASSOC);
         <meta name="description" content="" />
         <meta name="author" content="" />
         
-        <title>Maderas-Pani | Venta de Equipos de Palmas de Madera de Alta Calidad</title>
+        <title>Maderas-Pani | Venta de Madera de Alta Calidad</title>
         <meta name="description" content="Descubre equipos de madera de alta calidad en Maderas-Pani. Ofrecemos una amplia variedad de tamaños perfectos para uso profesional y personal, garantizando durabilidad y rendimiento superior. ¡Encuentra el equipo ideal para tus necesidades hoy mismo!">
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/img/logo1.png" />
@@ -125,7 +125,7 @@ $lista_team=$sentencia->fetchAll(PDO::FETCH_ASSOC);
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Nuestro trabajo</h2>
-                    <h3 class="section-subheading text-muted"><b>Somos una empresa líder en la zona, dedicada a la comercialización de palmas coloradas, postes de quebracho colorado, postes, medio postes y rodrigones para viñedos. Estamos en General Manuel Belgrano, interior de Formosa. Nos destacamos por ser responsables y  brindar   calidad y los mejores precios.</b></h3>
+                    <h3 class="section-subheading text-muted"><b>Somos la empresa líder en la zona, dedicada a la comercialización de <b>palmas coloradas, postes de quebracho colorado, postes, medio postes y rodrigones para viñedos</b>. Estamos en General Manuel Belgrano, interior de Formosa. Nos destacamos por ser responsables y  brindar   calidad y los mejores precios.</b></h3>
                 <div class="row">
                 <?php foreach($lista_portfolio as $registro){ ?>
                     <div class="col-lg-4 col-sm-6 mb-4">
@@ -187,37 +187,37 @@ $lista_team=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                                 <h4>2008</h4>
                                 <h4 class="subheading">Inicios</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">La empresa nació en los últimos meses de 2008 como un emprendimiento visionario de su fundador, Pani. Desde el principio, Pani supo que lanzar una empresa no sería tarea fácil. Con determinación y mucho esfuerzo, comenzó a vender varillas para viñedos, atendiendo la demanda local de los viticultores que necesitaban soportes de calidad para sus plantas. Los primeros meses estuvieron llenos de sacrificios, pero también de pequeñas recompensas que mantenían viva la esperanza de un futuro próspero.</p></div>
+                            <div class="timeline-body"><p class="text-muted">La empresa nació en los últimos meses de 2008 como un emprendimiento visionario de su fundador, Juan Carlos Paniagua. Desde el principio, él supo que lanzar una empresa no sería tarea fácil. Con determinación y mucho esfuerzo, comenzó a vender varillas para viñedos, atendiendo una demanda de los viticultores que necesitaban soportes de calidad para sus plantas. Los primeros meses estuvieron llenos de sacrificios, pero también de pequeñas recompensas que mantenían viva la esperanza de un futuro próspero.</p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>March 2011</h4>
-                                <h4 class="subheading">An Agency is Born</h4>
+                                <h4>Marzo 2010</h4>
+                                <h4 class="subheading">Diversificación</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted">A medida que la empresa crecía, Juan Carlos decidió diversificar su oferta para satisfacer mejor las necesidades de sus clientes. En 2010, la empresa comenzó a vender otras maderas, incluyendo las palmas caranday y el quebracho colorado. Estos nuevos productos fueron bien recibidos por agricultores y constructores, quienes valoraban la resistencia y durabilidad de estas maderas. La empresa se fue posicionando como un proveedor confiable en la región, gracias a la calidad de sus productos y la dedicación de su fundador.</p></div>
                         </div>
                     </li>
                     <li>
                         <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>December 2015</h4>
-                                <h4 class="subheading">Transition to Full Service</h4>
+                                <h4>2012</h4>
+                                <h4 class="subheading">Ampliacion</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted">El crecimiento continuó de manera sostenida, y en 2012, la empresa amplió su catálogo para incluir postes de quebracho colorado, medios postes y rodrigones. Esta diversificación permitió atender una gama más amplia de proyectos y necesidades, desde cercados agrícolas hasta construcciones rurales. Cada nuevo producto añadido representaba un paso más en la consolidación de la empresa como líder en el mercado maderero local.</p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>July 2020</h4>
-                                <h4 class="subheading">Phase Two Expansion</h4>
+                                <h4>Mayo 2024</h4>
+                                <h4 class="subheading">Consolidación</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted">Hoy, MADERAS PANI es sinónimo de calidad y fiabilidad en la venta de maderas. Ha crecido considerablemente desde sus humildes comienzos, pero mantiene intactos los valores de esfuerzo y dedicación que Pani imprimió desde el inicio. Gracias a su capacidad de adaptación y su compromiso con la excelencia, la empresa sigue siendo un referente para quienes buscan maderas de alta calidad y un servicio de confianza.</p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
